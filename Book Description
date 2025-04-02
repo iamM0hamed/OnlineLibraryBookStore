@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Description Of Book</title>
+</head>
+<body>
+    <section>
+    <div>
+        <h2>nav part</h2>
+    </div>
+    <div>
+        <div>
+            <img src="" alt="" width="">
+        </div>
+        <div>
+            <h2>Book Name</h2>
+            <p>Description of this book </p>
+        </div>
+    </div>
+    <div>
+        <h3></h3>
+        <p></p>
+    </div>
+</section>
+</body>
+</html>
