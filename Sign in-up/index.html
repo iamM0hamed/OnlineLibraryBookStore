@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign in/up</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-        <h1>Sign in</h1>
-        <form >
-            <label for="username">Username:</label><br>
+   
+    <div class="content">
+        <h1>Welcome to Our Library <br> Let's Sign in</h1>
+        <br><br>
+        <form id="signin">
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <br><br>
-            <label for="password">Password:</label><br>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <br><br>
-            <a href="forgetpass1.html" target="_blank">
+            <input type="submit" value="Submit">
+            <br><br>
+            <a class="forget" href="forgetpass1.html" target="_blank">
                 <label for="forgetpass">Forget Password?</label>
             </a>
-            <br>
-            <a href="sign-up.html" target="_blank">
-                <label for="sign-up">don't have account?</label>
-            </a>
             <br><br>
-            <input type="submit" value="Submit">
-
+            <a class="signup" href="sign-up.html">
+                <label for="signup">Create a new Account</label>
+            </a>
         </form>
 
+    </div>
+
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div> <!-- Overlay div -->
+        </div>
 
 </body>
 </html>
