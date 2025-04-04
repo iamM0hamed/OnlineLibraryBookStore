@@ -1,5 +1,7 @@
 # Online Library
 Web Technology Project
 
-<p>This project is about online book-store.</p>
-<p>It may be bad but not the worest</p>
+<p>This project is about online bookstore.</p>
+<p><del>It may be bad but not the worst</del>del></p>
+
+<p>It's constantly improving and aims to be one of the best!</p>
