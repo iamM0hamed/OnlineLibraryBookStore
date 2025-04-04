@@ -87,7 +87,8 @@ body {
 }
 
 /* Admin Button */
-.admin-link {
+.admin-link, 
+button {
     display: block;
     text-align: center;
     margin: 30px auto;
