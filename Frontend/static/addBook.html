@@ -4,35 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./Css/footer.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 </head>
 <body>
-    <!-- Add Book Form -->
-     <section id="add-book">
-        <div class="container">
-            <h2>Add a New Book</h2>
-            <div class="add-book-form">
-                <form>
-                    <label for="bookID">Book ID:</label>
-                    <input type="text" id="bookID" name="bookID" required>
-
-                    <label for="title">Book Name:</label>
-                    <input type="text" id="title" name="title" required>
-
-                    <label for="author">Author:</label>
-                    <input type="text" id="author" name="author" required>
-
-                    <label for="category">Category:</label>
-                    <input type="text" id="category" name="category" required>
-
-                    <label for="description">Description:</label>
-                    <textarea id="description" name="description" required></textarea>
-
-                    <button type="submit">Add Book</button>
-                </form>
+    <div id="wrapper">
+        <main class="content">
+        <!-- Add Book Form -->
+        <section id="add-book">
+            <div class="add-book-container">
+                <h2>Add a New Book</h2>
+                <div class="add-book-form">
+                    <form>
+                        <label for="bookID">Book ID:</label>
+                        <input type="text" id="bookID" name="bookID" required>
+                        
+                        <label for="title">Book Name:</label>
+                        <input type="text" id="title" name="title" required>
+                        
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+                        
+                        <label for="category">Category:</label>
+                        <input type="text" id="category" name="category" required>
+                        
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required></textarea>
+                        
+                        <button class="buttonlink" type="submit">Add Book</button>
+                    </form>
+                </div>
             </div>
-        </div>
-     </section>
-  
+        </section>
+    </main>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-icon">
+                    <a href="https://github.com/nouran8890/OnlineLibrary.git"><i class="fa fa-github" ></i></a>
+                </div>
+                <div class="footer-nav">
+                    <ul><li><a href="./aboutus.html">About</a></li>
+                        <li><a href="./contactUs.html">Contact Us</a></li>
+                        <!-- Later Add Another page -->
+                        <li><a href="">our Team</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="footer-bottom">
+                <p>Copyright &copy;2025 Designed by <span class="designer">FCAI Team</span></p>
+            </div>
+        </footer>
+
+    </div>
 </body>
 </html>
