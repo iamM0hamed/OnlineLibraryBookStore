@@ -1,0 +1,50 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff8dc;
+}
+
+#display-book {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 1000px;
+    max-height: 1000px;
+    margin: 20px auto;
+}
+
+/* Styling for the container */
+.display-book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the heading */
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Styling for book details */
+#book-details p {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+#book-details strong {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Hover effect for paragraphs */
+#book-details p:hover {
+    color: #007BFF; /* Adds a blue color on hover */
+    transition: color 0.3s ease;
+}

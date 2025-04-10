@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookstore User Profile</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <div class="profile">
-            <img src="https://via.placeholder.com/80" alt="User Avatar">
-            <div>
-                <h2>John Doe</h2>
-                <p>john.doe@example.com</p>
-                <p class="date">Member since: January 2020</p>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Bookstore User Profile</title>
+      <link rel="stylesheet" href="Css/profile-page.css" />
+      <!-- Github Icon  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+   </head>
+   <body>
+      <!-- Navigation bar part  -->
+      <nav class="navbar">
+         <div class="nav-container">
+            <ul class="nav-links">
+               <li>
+                  <a href=""><i class="fas fa-home"></i>Home</a>
+               </li>
+               <li>
+                  <a href=""><i class="fas fa-sign-in-alt"></i>Sign in</a>
+               </li>
+               <li>
+                  <a href=""><i class="fas fa-user-plus"></i>Sign Up</a>
+               </li>
+               <li>
+                  <a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a>
+               </li>
+               <li>
+                  <a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a>
+               </li>
+            </ul>
+            <div class="search-box">
+               <input type="text" placeholder="Search about Book..." />
+               <button><i class="fas fa-search"></i></button>
             </div>
-        </div>
-        
-        <div>
+         </div>
+      </nav>
+      
+      <!-- User profile part  -->
+      <div class="container">
+         <div class="profile">
+            <img src="https://via.placeholder.com/80" alt="User Avatar" />
+            <div>
+               <h2>John Doe</h2>
+               <p>john.doe@example.com</p>
+               <p class="date">Member since: January 2020</p>
+            </div>
+         </div>
+
+         <div>
             <h3>Favorite Books</h3>
             <ul>
-                <li><strong>The Great Gatsby</strong> by F. Scott Fitzgerald</li>
-                <li><strong>1984</strong> by George Orwell</li>
-                <li><strong>To Kill a Mockingbird</strong> by Harper Lee</li>
+               <li><strong>The Great Gatsby</strong> by F. Scott Fitzgerald</li>
+               <li><strong>1984</strong> by George Orwell</li>
+               <li><strong>To Kill a Mockingbird</strong> by Harper Lee</li>
             </ul>
-        </div>
-        
-        <div>
+         </div>
+
+         <div>
             <h3>Recent Purchases</h3>
             <ul>
-                <li><strong>The Catcher in the Rye</strong> - <span class="date">March 15, 2025</span></li>
-                <li><strong>Brave New World</strong> - <span class="date">March 10, 2025</span></li>
-                <li><strong>The Hobbit</strong> - <span class="date">March 5, 2025</span></li>
+               <li><strong>The Catcher in the Rye</strong> - <span class="date">March 15, 2025</span></li>
+               <li><strong>Brave New World</strong> - <span class="date">March 10, 2025</span></li>
+               <li><strong>The Hobbit</strong> - <span class="date">March 5, 2025</span></li>
             </ul>
-        </div>
-    </div>
-</body>
+         </div>
+      </div>
+
+      <!--  footer part  -->
+      <div class="wrapper">
+         <main class="content"></main>
+         <footer class="footer">
+            <div class="footer-container">
+               <div class="footer-icon">
+                  <a href="https://github.com/nouran8890/OnlineLibrary.git" target="_blank"><i class="fa fa-github"></i></a>
+               </div>
+               <div class="footer-nav">
+                  <ul>
+                     <li><a href="./aboutus.html">About</a></li>
+                     <li><a href="./contactUs.html">Contact Us</a></li>
+                     <!-- Later Add Another page -->
+                     <li><a href="">our Team</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div id="footer-bottom">
+               <p>Copyright &copy;2025 Designed by <span class="designer">FCAI Team</span></p>
+            </div>
+         </footer>
+      </div>
+   </body>
 </html>
