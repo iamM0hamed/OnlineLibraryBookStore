@@ -31,10 +31,10 @@ body {
   }
 
   .add-book-container {
-    background-color: rgba(255, 248, 220, 0.95); /* semi-transparent beige */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* very subtle shadow */
+    background-color: rgba(255, 248, 220, 0.95); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
   }
   
 
@@ -139,66 +139,3 @@ body {
     }
 }
 
-
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #74641d;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #a78e1f;
-    transform: scale(1.05); 
-}
-
-button:active {
-    background-color: #c4a82b;
-    transform: scale(0.95); 
-}
-
-#add-book {
-    flex: 1;
-  }
-
-  h2 {
-    text-align: center;
-    color: #111;
-      /* change the color of the border for now this is black  */
-    margin-bottom: 30px;
-    font-size: 2em;
-}
-
-.add-book-form form {
-    max-width: 350px;            /* smaller max width */
-    width: 90%;                  /* responsive on small screens */
-    margin: 30px auto;           /* centers the form horizontally */
-    display: flex;
-    flex-direction: column;
-    gap: 15px;   
-  }
-
-  .add-book-form label {
-    font-weight: bold;
-  }
-  
-  .add-book-form input,
-  .add-book-form textarea {
-    padding: 8px 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 0.95em;
-    width: 100%;
-  }
-  
-  .add-book-form textarea {
-    resize: vertical;
-    min-height: 80px;
-  }
-  
