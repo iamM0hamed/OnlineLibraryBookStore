@@ -80,7 +80,7 @@
 .search-box {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255);
     border-radius: 20px;
     padding: 5px 10px;
     backdrop-filter: blur(4px);
@@ -97,10 +97,6 @@
     outline: none;
     width: 100%;
     box-sizing: border-box;
-}
-
-.search-box input::placeholder{
-    color: rgba(255, 255, 255, 0.5);
 }
 
 .search-box button {
