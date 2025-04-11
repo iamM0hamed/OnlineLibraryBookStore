@@ -6,14 +6,27 @@
     <title>Admin</title>
     <link rel="stylesheet" href="Css/styles.css">
     <link rel="stylesheet" href="Css/dashboard.css">
+    <link rel="stylesheet" href="Css/Nav.css">
+    <link rel="stylesheet" href="Css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-  <!-- Header Section -->
-  <div class="header">
-    <h1>Welcome to Our Library</h1>
-    <p>Explore books, borrow your favorites, and enjoy reading!</p>
-</div>
-
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
+                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
+                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search about Book...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
 <!-- Add Book Button -->
 <section class="action-section">
     <a href="addBook.html" class="buttonlink">Add New Book</a>
@@ -56,8 +69,22 @@
 </section>
 
 <!-- Footer Section -->
-<div class="footer">
-    <p>© 2025 Library System. All rights reserved.</p>
-</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-icon">
+            <a href="https://github.com/nouran8890/OnlineLibrary.git"><i class="fa fa-github" ></i></a>
+        </div>
+        <div class="footer-nav">
+            <ul><li><a href="./aboutus.html">About</a></li>
+                <li><a href="./contactUs.html">Contact Us</a></li>
+                <!-- Later Add Another page -->
+                <li><a href="">our Team</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer-bottom">
+        <p>Copyright &copy;2025 Designed by <span class="designer">FCAI Team</span></p>
+    </div>
+</footer>
 </body>
 </html>

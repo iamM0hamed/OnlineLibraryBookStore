@@ -1,6 +1,6 @@
 .navbar {
     background: #74641d;
-    padding: 15px 20px;
+    padding: 10px 15px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -80,11 +80,13 @@
 .search-box {
     display: flex;
     align-items: center;
-    background: rgba(255,255,255);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 5px 10px;
     backdrop-filter: blur(4px);
-    transition: all 0.3s ease;
+    box-sizing: border-box;
+    width: 250px;
+    height: 40px; 
 }
 
 .search-box input {
@@ -93,15 +95,22 @@
     color: white;
     font-size: 16px;
     outline: none;
-    width: 150px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-box input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .search-box button {
-    background: none;
-    border: none;
+    all: unset;
+    display: inline-block;
     color: rgb(80, 75, 75);
     cursor: pointer;
     font-size: 18px;
+    padding: 0;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -117,7 +126,7 @@
 
     .search-box {
         width: 100%;
-        max-width: 300px;
+        max-width: 200px;
     }
 
     .search-box input {

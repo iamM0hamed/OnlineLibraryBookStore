@@ -6,24 +6,6 @@ body {
     color: #444;
 }
 
-/* Header Styles */
-.header {
-    text-align: center;
-    background-color: #74641d; /* Calming purple shade */
-    color: white;
-    padding: 30px 15px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-.header p {
-    margin: 10px 0 0;
-    font-size: 1.2em;
-}
-
 /* Section Styling */
 .book-section {
     margin: 20px auto;

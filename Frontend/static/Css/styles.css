@@ -85,3 +85,8 @@ li {
     background-color: #003d80; /* Even darker blue when clicked */
     transform: scale(0.95); /* Slightly shrink on click */
 }
+
+
+.action-section {
+    margin: 15px;
+}
