@@ -6,10 +6,38 @@ body {
     color: #444;
 }
 
+.dashboard-content .navbar {
+    padding: 10px 0; 
+}
+
+.dashboard-content .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.dashboard-content .nav-links li {
+    margin-right: 10px; /* Reduce the space between the items */
+}
+
+.dashboard-content .nav-links a {
+    padding: 8px 12px; /* Make the links more compact */
+    font-size: 14px; /* Reduce font size */
+}
+
+.dashboard-content .search-box input {
+    padding: 5px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.dashboard-content .search-box button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
 /* Header Styles */
 .header {
     text-align: center;
-    background-color: #74641d; /* Calming purple shade */
+    background-color: #D4AF37; /* Calming purple shade */
     color: white;
     padding: 30px 15px;
 }
