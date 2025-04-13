@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family:poppins, sans-serif;
+
+}
+
+.ourteam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background-color: #74641d;
+    color: #f2f2f2;
+    padding: 4rem 0;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 2rem;
+}
+
+.team-members .member-card {
+    padding: 1rem 2.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.6);
+    transition: 0.5s;
+
+}
+
+.member-card h2 {
+    text-align: center;
+    color: #222;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0.6rem;
+}
+
+
+.member-card h5 {
+    text-align: center;
+    color: #222;
+    font-weight: 600;
+    background-color: #fdfdfd;
+    padding:5px 10px;
+    border-radius: 30px;
+    margin: 5px;
+}
+
+.member-card:nth-child(1){
+    background-color: #f9f7f1;
+}
+.member-card:nth-child(2){
+    background-color: #e4d3a1;
+    top: 20%;
+
+}
+.member-card:nth-child(3){
+    background-color: #e4d3a1;
+}
+.member-card:nth-child(4){
+    background-color: #f9f7f1;
+    top: 20%;
+
+}
+.member-card:nth-child(5){
+    background-color: #f9f7f1;
+}
+.member-card:nth-child(6){
+    background-color: #e4d3a1;
+    top: 20%;
+
+}
+
+.member-card .social {
+    margin: 15px;
+    text-align: center;
+}
+
+.social a i {
+    font-size: 18px;
+    color: #000;
+    padding: 0 3px;
+    transition: 0.5s;
+
+}
+.social a i:hover {
+    transform: rotate(360deg);
+}
+.member-card:hover {
+    z-index: 999;
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+
+}
+
+.content {
+    max-width: 700px;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 1.3rem;
+}
+
+.content p {
+    font-size: 22px;
+    margin-bottom: 1rem;
+}
+
+.content .button {
+    padding: 1rem 2.5rem;
+    background-color: #ebcd74;
+    color:rgb(34, 33, 33);
+    margin: 1.5rem 0;
+    display: inline-block;
+    border-radius: 30px;
+    margin-top: 2.5rem;
+    transition: 0.5s;
+    
+}
+.content .button:hover {
+    box-sizing: 0 0 30px rgba(0,0,0,0.7);
+    transform: translateY(-10px);
+} 
+
+@media(max-width:1000){
+    .ourteam{
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .content {
+        padding: 3rem;
+    }
+    .content h1 {
+        margin-top: 1.5rem;
+    }
+}
