@@ -4,6 +4,12 @@ body {
     padding: 0;
     background-color: #D4AF37;
     color: #444;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
 }
 
 /* Section Styling */
@@ -76,7 +82,7 @@ button {
     margin: 30px auto;
     padding: 15px 25px;
     color: white;
-    background-color: #ff6c63;
+    background-color: #74641d;
     text-decoration: none;
     border-radius: 5px;
     width: 200px;
@@ -85,5 +91,5 @@ button {
 }
 
 .admin-link:hover {
-    background-color: #ff4a40;
+    background-color: #5A4E16;
 }

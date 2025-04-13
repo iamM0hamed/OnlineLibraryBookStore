@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Book</title>
-    <link rel="stylesheet" href="./Css/footer.css">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="./Css/Nav.css">
     <link rel="stylesheet" href="./Css/add-book.css">
+    <link rel="stylesheet" href="./Css/footer.css">
 
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 </head>
 <body>
-    <div id="wrapper">
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
+                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
+                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search about Book...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
         <main class="content">
         <!-- Add Book Form -->
         <section id="add-book">
             <div class="add-book-container">
-                <h2>Edit a New Book</h2>
+                <h2>Edit a Book</h2>
                 <div class="add-book-form">
                     <form>
                         <label for="bookID">Book ID:</label>
@@ -58,6 +74,5 @@
                 <p>Copyright &copy;2025 Designed by <span class="designer">FCAI Team</span></p>
             </div>
         </footer>
-    </div>
 </body>
 </html>

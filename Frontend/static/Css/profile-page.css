@@ -1,13 +1,18 @@
 body {
    font-family: Arial, sans-serif;
    margin: 0;
+   padding: 0;
    display: flex;
    flex-direction: column;
    min-height: 100vh;
    background-color: #d4af37;
    height: auto;
    width: auto;
+   position: relative;
 }
+.main-content {
+   flex: 1;
+ }
 
 /* Navigation-bar part */
 
@@ -122,7 +127,7 @@ body {
    padding-left: 15px;
    margin-top: 50px;
    margin-bottom: 50px;
-   width: 101%;
+   width: 100%;
    background: white;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -174,104 +179,3 @@ li {
    font-size: 14px;
 }
 
-/* Footer Part */
-.footer {
-   text-align: center;
-   background-color: #74641d;
-   bottom: 0;
-   color: white;
-   padding: 20px 15px;
-   margin-top: auto;
-   width: 100%;
-}
-
-.footer-container {
-   padding: 10px 15px;
-}
-
-.footer-icon {
-   display: flex;
-   justify-content: center;
-}
-
-.footer-icon a {
-   text-decoration: none;
-   padding: 4px;
-   background-color: #ffffff;
-   margin: 4px;
-   border-radius: 50%;
-}
-
-.footer-icon a i {
-   font-size: 2em;
-   color: black;
-   opacity: 0.9;
-}
-
-.footer-icon a:hover {
-   background-color: #111;
-   transition: 0.5s;
-}
-
-.footer-icon a:hover i {
-   color: white;
-   transition: 0.5s;
-}
-
-.footer-nav {
-   margin: 5px 0;
-}
-
-.footer-nav ul {
-   display: flex;
-   justify-content: center;
-   list-style-type: none;
-}
-
-.footer-nav ul li a {
-   color: white;
-   margin: 10px;
-   text-decoration: none;
-   font-size: 1em;
-   opacity: 0.7;
-   transition: 0.5s;
-}
-
-.footer-nav ul li a:hover {
-   opacity: 1;
-   color: #000000;
-}
-
-#footer-bottom {
-   background-color: #74641d;
-   text-align: center;
-}
-
-#footer-bottom p {
-   color: white;
-   margin: 0;
-   font-size: 0.9em;
-}
-
-.designer {
-   opacity: 0.7;
-   text-transform: uppercase;
-   letter-spacing: 1px;
-   font-weight: 400;
-   margin: 0px 5px;
-}
-
-@media (max-width: 700px) {
-   .footer-nav ul {
-      flex-direction: column;
-   }
-   .footer-nav ul li {
-      width: 100%;
-      text-align: center;
-      margin: 10px;
-   }
-   .footer-icon a {
-      padding: 8px;
-      margin: 4px;
-   }
-}

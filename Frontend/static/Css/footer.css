@@ -1,4 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing : border-box;
+
+}
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    background-color: #FAF3E0; 
+}
+
+
+
+
 .footer {
+    margin-top: auto;
+
     text-align: center;
     background-color: #74641d;
     color: white;
@@ -28,7 +51,7 @@
     z-index: 1;
 }
 .footer-container {
-    padding: 10px 15px;
+    padding: 0;
 
 }
 
