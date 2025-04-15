@@ -160,11 +160,16 @@ body {
    align-self: center;
    margin-top: 20px;
    margin-bottom: 20px;
+   flex: 1;
+   transform: translateY(0);
+   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+   border: 1px solid rgb(251, 240, 212);
 }
 
 .profile-container:hover {
-   transform: scale(1.05);
-   transition: transform 0.5s ease;
+   transform: translateY(-10px);
+   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+   border: 1px solid #ffe881;
 }
 
 .profile-section {
@@ -203,16 +208,19 @@ body {
 }
 
 /* Common section styling for both favorite books and borrowed books */
-.favorite-books, .recent-borrowed {
+.favorite-books,
+.recent-borrowed {
    padding: 20px 24px;
    border-bottom: 2px solid #7e8282;
 }
 
-.favorite-books:last-child, .recent-borrowed:last-child {
+.favorite-books:last-child,
+.recent-borrowed:last-child {
    border-bottom: none;
 }
 
-.favorite-books h3, .recent-borrowed h3 {
+.favorite-books h3,
+.recent-borrowed h3 {
    font-size: 16px;
    font-weight: 600;
    color: #2d3748;
@@ -221,7 +229,8 @@ body {
    padding-bottom: 8px;
 }
 
-.favorite-books h3::after, .recent-borrowed h3::after {
+.favorite-books h3::after,
+.recent-borrowed h3::after {
    content: "";
    position: absolute;
    left: 0;
@@ -232,11 +241,13 @@ body {
    border-radius: 3px;
 }
 
-.favorite-books ul, .recent-borrowed ul {
+.favorite-books ul,
+.recent-borrowed ul {
    list-style: none;
 }
 
-.favorite-books ul li, .recent-borrowed ul li {
+.favorite-books ul li,
+.recent-borrowed ul li {
    padding: 8px 0;
    display: flex;
    justify-content: space-between;
@@ -244,22 +255,27 @@ body {
    border-bottom: 1px solid rgba(126, 130, 130, 0.2);
 }
 
-.favorite-books ul li:last-child, .recent-borrowed ul li:last-child {
+.favorite-books ul li:last-child,
+.recent-borrowed ul li:last-child {
    border-bottom: none;
 }
 
-.book-info, .borrowed-info {
+.book-info,
+.borrowed-info {
    display: flex;
    flex-direction: column;
 }
 
-.book-title, .borrowed-title {
+.book-title,
+.borrowed-title {
    font-weight: 600;
    color: #2d3748;
    margin-bottom: 3px;
 }
 
-.book-author, .borrowed-date, .borrowed-return-date {
+.book-author,
+.borrowed-date,
+.borrowed-return-date {
    font-size: 14px;
    color: #718096;
 }
@@ -273,24 +289,25 @@ body {
 
 @media (max-width: 600px) {
    .profile-section {
-       flex-direction: column;
-       text-align: center;
+      flex-direction: column;
+      text-align: center;
    }
-   
+
    .profile-avatar {
-       margin-right: 0;
-       margin-bottom: 16px;
+      margin-right: 0;
+      margin-bottom: 16px;
    }
-   
-   .favorite-books ul li, .recent-borrowed ul li {
-       flex-direction: column;
-       align-items: flex-start;
-       gap: 5px;
+
+   .favorite-books ul li,
+   .recent-borrowed ul li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
    }
-   
+
    .date-display {
-       text-align: left;
-       margin-top: 4px;
+      text-align: left;
+      margin-top: 4px;
    }
 }
 
