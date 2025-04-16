@@ -36,6 +36,7 @@
     max-width: 1200px;
     position: relative;
     z-index: 2;
+    margin: 0 auto;
 }
 
 
@@ -47,6 +48,11 @@
     margin: 0;
 }
 
+.nav-links li {
+    display: flex;
+    justify-content: center;
+}
+
 .nav-links li a {
     color: white;
     font-size: 17px;
@@ -56,6 +62,15 @@
     border-radius: 6px;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-links li a i {
+    font-size: 16px;
 }
 
 .nav-links li a::after {

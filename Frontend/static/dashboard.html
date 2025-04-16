@@ -1,87 +1,669 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Library</title>
-     <link rel="stylesheet" href="Css/Nav.css">
-     <link rel="stylesheet" href="Css/dashboard.css">
-     <link rel="stylesheet" href="Css/footer.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- </head>
- <body>
-    <nav class="navbar">
-        <div class="nav-container">
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Library</title>
+      <link rel="stylesheet" href="Css/Nav.css" />
+      <link rel="stylesheet" href="Css/dashboard.css" />
+      <link rel="stylesheet" href="Css/footer.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+   </head>
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar">
+         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
-                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
-                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
-                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+               <li>
+                  <a href="dashboard.html"><i class="fas fa-home"></i>Home</a>
+               </li>
+               <li>
+                  <a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a>
+               </li>
+               <li>
+                  <a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a>
+               </li>
+               <li>
+                  <a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a>
+               </li>
+               <li>
+                  <a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a>
+               </li>
             </ul>
             <div class="search-box">
-                <input type="text" placeholder="Search about Book...">
-                <button><i class="fas fa-search"></i></button>
+               <input type="text" placeholder="Search about Book..." />
+               <button><i class="fas fa-search"></i></button>
             </div>
-        </div>
-    </nav>
-<div class="main-content">
-    <!-- Book Listing Section -->
-    <section class="book-section">
-        <h2>Available Books</h2>
-        <div class="book-grid">
-            <!-- Book 1 -->
-            <div class="book-card">
-                <img src="book1.jpg" alt="Book 1 Cover" width="150" height="200">
-                <h3>Book Title 1</h3>
-                <p>Author: Author Name 1</p>
-                <p>Genre: Fiction</p>
-                <a href="BookDescription.html">View Details</a> |
-                <a href="borrow.html">Borrow</a>
-            </div>
+         </div>
+      </nav>
+      <!-- Main Content -->
+      <div class="main-content">
+         <!-- Book Listing Section -->
+         <section class="book-section">
+            <h2>Available Books</h2>
+            <div class="book-grid">
+               <!-- Book 1 -->
+               <div class="book-card">
+                  <img src="book1.jpg" alt="Book 1 Cover" />
+                  <h3>The Shining</h3>
+                  <p>Author: Stephen King</p>
+                  <p>Genre: Horror</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
 
-            <!-- Book 2 -->
-            <div class="book-card">
-                <img src="book2.jpg" alt="Book 2 Cover" width="150" height="200">
-                <h3>Book Title 2</h3>
-                <p>Author: Author Name 2</p>
-                <p>Genre: Mystery</p>
-                <a href="BookDescription.html">View Details</a> |
-                <a href="borrow.html">Borrow</a>
-            </div>
-            
+               <!-- Book 2 -->
+               <div class="book-card">
+                  <img src="book2.jpg" alt="Book 2 Cover" />
+                  <h3>The Hitchhiker's Guide to the Galaxy</h3>
+                  <p>Author: Douglas Adams</p>
+                  <p>Genre: Science Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
 
-            <!-- Book 3 -->
-            <div class="book-card">
-                <img src="book3.jpg" alt="Book 3 Cover" width="150" height="200">
-                <h3>Book Title 3</h3>
-                <p>Author: Author Name 3</p>
-                <p>Genre: Science Fiction</p>
-                <a href="BookDescription.html">View Details</a> |
-                <a href="borrow.html">Borrow</a>
-            </div>
-        </div>
-    </section>
-</div>
-    <a class="admin-link" href="mainAdmin.html">Admin?</a>
+               <!-- Book 3 -->
+               <div class="book-card">
+                  <img src="book3.jpg" alt="Book 3 Cover" />
+                  <h3>Dune</h3>
+                  <p>Author: Frank Herbert</p>
+                  <p>Genre: Science Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
 
-    <footer class="footer">
-        <div class="footer-container">
+               <!-- Book 4 -->
+               <div class="book-card">
+                  <img src="book4.jpg" alt="Book 4 Cover" />
+                  <h3>The Chronicles of Narnia</h3>
+                  <p>Author: C.S. Lewis</p>
+                  <p>Genre: Fantasy</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 5 -->
+               <div class="book-card">
+                  <img src="book5.jpg" alt="Book 5 Cover" />
+                  <h3>The Da Vinci Code</h3>
+                  <p>Author: Dan Brown</p>
+                  <p>Genre: Mystery Thriller</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 6 -->
+               <div class="book-card">
+                  <img src="book6.jpg" alt="Book 6 Cover" />
+                  <h3>The Great Gatsby</h3>
+                  <p>Author: F. Scott Fitzgerald</p>
+                  <p>Genre: Classic</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 7 -->
+               <div class="book-card">
+                  <img src="book7.jpg" alt="Book 7 Cover" />
+                  <h3>To Kill a Mockingbird</h3>
+                  <p>Author: Harper Lee</p>
+                  <p>Genre: Classic</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 8 -->
+               <div class="book-card">
+                  <img src="book8.jpg" alt="Book 8 Cover" />
+                  <h3>1984</h3>
+                  <p>Author: George Orwell</p>
+                  <p>Genre: Dystopian</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 9 -->
+               <div class="book-card">
+                  <img src="book9.jpg" alt="Book 9 Cover" />
+                  <h3>Pride and Prejudice</h3>
+                  <p>Author: Jane Austen</p>
+                  <p>Genre: Romance</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 10 -->
+               <div class="book-card">
+                  <img src="book10.jpg" alt="Book 10 Cover" />
+                  <h3>The Hobbit</h3>
+                  <p>Author: J.R.R. Tolkien</p>
+                  <p>Genre: Fantasy</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 11 -->
+               <div class="book-card">
+                  <img src="book11.jpg" alt="Book 11 Cover" />
+                  <h3>Harry Potter and the Sorcerer's Stone</h3>
+                  <p>Author: J.K. Rowling</p>
+                  <p>Genre: Fantasy</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 12 -->
+               <div class="book-card">
+                  <img src="book12.jpg" alt="Book 12 Cover" />
+                  <h3>The Catcher in the Rye</h3>
+                  <p>Author: J.D. Salinger</p>
+                  <p>Genre: Coming-of-age</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 13 -->
+               <div class="book-card">
+                  <img src="book13.jpg" alt="Book 13 Cover" />
+                  <h3>The Lord of the Rings</h3>
+                  <p>Author: J.R.R. Tolkien</p>
+                  <p>Genre: Fantasy</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 14 -->
+               <div class="book-card">
+                  <img src="book14.jpg" alt="Book 14 Cover" />
+                  <h3>Brave New World</h3>
+                  <p>Author: Aldous Huxley</p>
+                  <p>Genre: Dystopian</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 15 -->
+               <div class="book-card">
+                  <img src="book15.jpg" alt="Book 15 Cover" />
+                  <h3>The Alchemist</h3>
+                  <p>Author: Paulo Coelho</p>
+                  <p>Genre: Adventure</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 16 -->
+               <div class="book-card">
+                  <img src="book16.jpg" alt="Book 16 Cover" />
+                  <h3>Moby-Dick</h3>
+                  <p>Author: Herman Melville</p>
+                  <p>Genre: Adventure</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 17 -->
+               <div class="book-card">
+                  <img src="book17.jpg" alt="Book 17 Cover" />
+                  <h3>War and Peace</h3>
+                  <p>Author: Leo Tolstoy</p>
+                  <p>Genre: Historical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 18 -->
+               <div class="book-card">
+                  <img src="book18.jpg" alt="Book 18 Cover" />
+                  <h3>Crime and Punishment</h3>
+                  <p>Author: Fyodor Dostoevsky</p>
+                  <p>Genre: Psychological Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 19 -->
+               <div class="book-card">
+                  <img src="book19.jpg" alt="Book 19 Cover" />
+                  <h3>Jane Eyre</h3>
+                  <p>Author: Charlotte Brontë</p>
+                  <p>Genre: Gothic Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 20 -->
+               <div class="book-card">
+                  <img src="book20.jpg" alt="Book 20 Cover" />
+                  <h3>Wuthering Heights</h3>
+                  <p>Author: Emily Brontë</p>
+                  <p>Genre: Gothic Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 21 -->
+               <div class="book-card">
+                  <img src="book21.jpg" alt="Book 21 Cover" />
+                  <h3>The Picture of Dorian Gray</h3>
+                  <p>Author: Oscar Wilde</p>
+                  <p>Genre: Gothic Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 22 -->
+               <div class="book-card">
+                  <img src="book22.jpg" alt="Book 22 Cover" />
+                  <h3>Little Women</h3>
+                  <p>Author: Louisa May Alcott</p>
+                  <p>Genre: Coming-of-age</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 23 -->
+               <div class="book-card">
+                  <img src="book23.jpg" alt="Book 23 Cover" />
+                  <h3>Frankenstein</h3>
+                  <p>Author: Mary Shelley</p>
+                  <p>Genre: Gothic Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 24 -->
+               <div class="book-card">
+                  <img src="book24.jpg" alt="Book 24 Cover" />
+                  <h3>Anna Karenina</h3>
+                  <p>Author: Leo Tolstoy</p>
+                  <p>Genre: Realist Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 25 -->
+               <div class="book-card">
+                  <img src="book25.jpg" alt="Book 25 Cover" />
+                  <h3>Don Quixote</h3>
+                  <p>Author: Miguel de Cervantes</p>
+                  <p>Genre: Satire</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 26 -->
+               <div class="book-card">
+                  <img src="book26.jpg" alt="Book 26 Cover" />
+                  <h3>The Brothers Karamazov</h3>
+                  <p>Author: Fyodor Dostoevsky</p>
+                  <p>Genre: Philosophical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 27 -->
+               <div class="book-card">
+                  <img src="book27.jpg" alt="Book 27 Cover" />
+                  <h3>The Odyssey</h3>
+                  <p>Author: Homer</p>
+                  <p>Genre: Epic Poetry</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 28 -->
+               <div class="book-card">
+                  <img src="book28.jpg" alt="Book 28 Cover" />
+                  <h3>The Divine Comedy</h3>
+                  <p>Author: Dante Alighieri</p>
+                  <p>Genre: Epic Poetry</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 29 -->
+               <div class="book-card">
+                  <img src="book29.jpg" alt="Book 29 Cover" />
+                  <h3>Les Misérables</h3>
+                  <p>Author: Victor Hugo</p>
+                  <p>Genre: Historical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 30 -->
+               <div class="book-card">
+                  <img src="book30.jpg" alt="Book 30 Cover" />
+                  <h3>One Hundred Years of Solitude</h3>
+                  <p>Author: Gabriel García Márquez</p>
+                  <p>Genre: Magical Realism</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 31 -->
+               <div class="book-card">
+                  <img src="book31.jpg" alt="Book 31 Cover" />
+                  <h3>The Grapes of Wrath</h3>
+                  <p>Author: John Steinbeck</p>
+                  <p>Genre: Historical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 32 -->
+               <div class="book-card">
+                  <img src="book32.jpg" alt="Book 32 Cover" />
+                  <h3>The Count of Monte Cristo</h3>
+                  <p>Author: Alexandre Dumas</p>
+                  <p>Genre: Adventure</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 33 -->
+               <div class="book-card">
+                  <img src="book33.jpg" alt="Book 33 Cover" />
+                  <h3>The Scarlet Letter</h3>
+                  <p>Author: Nathaniel Hawthorne</p>
+                  <p>Genre: Romantic Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 34 -->
+               <div class="book-card">
+                  <img src="book34.jpg" alt="Book 34 Cover" />
+                  <h3>The Adventures of Huckleberry Finn</h3>
+                  <p>Author: Mark Twain</p>
+                  <p>Genre: Adventure</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 35 -->
+               <div class="book-card">
+                  <img src="book35.jpg" alt="Book 35 Cover" />
+                  <h3>Alice's Adventures in Wonderland</h3>
+                  <p>Author: Lewis Carroll</p>
+                  <p>Genre: Fantasy</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 36 -->
+               <div class="book-card">
+                  <img src="book36.jpg" alt="Book 36 Cover" />
+                  <h3>Great Expectations</h3>
+                  <p>Author: Charles Dickens</p>
+                  <p>Genre: Coming-of-age</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 37 -->
+               <div class="book-card">
+                  <img src="book37.jpg" alt="Book 37 Cover" />
+                  <h3>The Old Man and the Sea</h3>
+                  <p>Author: Ernest Hemingway</p>
+                  <p>Genre: Literary Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 38 -->
+               <div class="book-card">
+                  <img src="book38.jpg" alt="Book 38 Cover" />
+                  <h3>Dracula</h3>
+                  <p>Author: Bram Stoker</p>
+                  <p>Genre: Gothic Horror</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 40 -->
+               <div class="book-card">
+                  <img src="book40.jpg" alt="Book 40 Cover" />
+                  <h3>The Iliad</h3>
+                  <p>Author: Homer</p>
+                  <p>Genre: Epic Poetry</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 41 -->
+               <div class="book-card">
+                  <img src="book41.jpg" alt="Book 41 Cover" />
+                  <h3>The Canterbury Tales</h3>
+                  <p>Author: Geoffrey Chaucer</p>
+                  <p>Genre: Poetry Collection</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 42 -->
+               <div class="book-card">
+                  <img src="book42.jpg" alt="Book 42 Cover" />
+                  <h3>Fahrenheit 451</h3>
+                  <p>Author: Ray Bradbury</p>
+                  <p>Genre: Dystopian</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 43 -->
+               <div class="book-card">
+                  <img src="book43.jpg" alt="Book 43 Cover" />
+                  <h3>The Road</h3>
+                  <p>Author: Cormac McCarthy</p>
+                  <p>Genre: Post-Apocalyptic</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 44 -->
+               <div class="book-card">
+                  <img src="book44.jpg" alt="Book 44 Cover" />
+                  <h3>The Color Purple</h3>
+                  <p>Author: Alice Walker</p>
+                  <p>Genre: Literary Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 45 -->
+               <div class="book-card">
+                  <img src="book45.jpg" alt="Book 45 Cover" />
+                  <h3>Slaughterhouse-Five</h3>
+                  <p>Author: Kurt Vonnegut</p>
+                  <p>Genre: Science Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 46 -->
+               <div class="book-card">
+                  <img src="book46.jpg" alt="Book 46 Cover" />
+                  <h3>Lord of the Flies</h3>
+                  <p>Author: William Golding</p>
+                  <p>Genre: Allegorical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 47 -->
+               <div class="book-card">
+                  <img src="book47.jpg" alt="Book 47 Cover" />
+                  <h3>The Handmaid's Tale</h3>
+                  <p>Author: Margaret Atwood</p>
+                  <p>Genre: Dystopian</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 48 -->
+               <div class="book-card">
+                  <img src="book48.jpg" alt="Book 48 Cover" />
+                  <h3>A Tale of Two Cities</h3>
+                  <p>Author: Charles Dickens</p>
+                  <p>Genre: Historical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 49 -->
+               <div class="book-card">
+                  <img src="book49.jpg" alt="Book 49 Cover" />
+                  <h3>The Kite Runner</h3>
+                  <p>Author: Khaled Hosseini</p>
+                  <p>Genre: Historical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 50 -->
+               <div class="book-card">
+                  <img src="book50.jpg" alt="Book 50 Cover" />
+                  <h3>The Bell Jar</h3>
+                  <p>Author: Sylvia Plath</p>
+                  <p>Genre: Psychological Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 51 -->
+               <div class="book-card">
+                  <img src="book51.jpg" alt="Book 51 Cover" />
+                  <h3>Catch-22</h3>
+                  <p>Author: Joseph Heller</p>
+                  <p>Genre: Satire</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 52 -->
+               <div class="book-card">
+                  <img src="book52.jpg" alt="Book 52 Cover" />
+                  <h3>The Secret Garden</h3>
+                  <p>Author: Frances Hodgson Burnett</p>
+                  <p>Genre: Children's Literature</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 53 -->
+               <div class="book-card">
+                  <img src="book53.jpg" alt="Book 53 Cover" />
+                  <h3>The Sun Also Rises</h3>
+                  <p>Author: Ernest Hemingway</p>
+                  <p>Genre: Modernist Novel</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 54 -->
+               <div class="book-card">
+                  <img src="book54.jpg" alt="Book 54 Cover" />
+                  <h3>Things Fall Apart</h3>
+                  <p>Author: Chinua Achebe</p>
+                  <p>Genre: African Literature</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 55 -->
+               <div class="book-card">
+                  <img src="book55.jpg" alt="Book 55 Cover" />
+                  <h3>The Stranger</h3>
+                  <p>Author: Albert Camus</p>
+                  <p>Genre: Philosophical Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 56 -->
+               <div class="book-card">
+                  <img src="book56.jpg" alt="Book 56 Cover" />
+                  <h3>One Flew Over the Cuckoo's Nest</h3>
+                  <p>Author: Ken Kesey</p>
+                  <p>Genre: Psychological Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 57 -->
+               <div class="book-card">
+                  <img src="book57.jpg" alt="Book 57 Cover" />
+                  <h3>The Metamorphosis</h3>
+                  <p>Author: Franz Kafka</p>
+                  <p>Genre: Absurdist Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 58 -->
+               <div class="book-card">
+                  <img src="book58.jpg" alt="Book 58 Cover" />
+                  <h3>The Name of the Rose</h3>
+                  <p>Author: Umberto Eco</p>
+                  <p>Genre: Historical Mystery</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 59 -->
+               <div class="book-card">
+                  <img src="book59.jpg" alt="Book 59 Cover" />
+                  <h3>Lolita</h3>
+                  <p>Author: Vladimir Nabokov</p>
+                  <p>Genre: Controversial Fiction</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 60 -->
+               <div class="book-card">
+                  <img src="book60.jpg" alt="Book 60 Cover" />
+                  <h3>The Catcher in the Rye</h3>
+                  <p>Author: J.D. Salinger</p>
+                  <p>Genre: Coming-of-age</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+
+               <!-- Book 61 -->
+               <div class="book-card">
+                  <img src="book61.jpg" alt="Book 61 Cover" />
+                  <h3>The Hunger Games</h3>
+                  <p>Author: Suzanne Collins</p>
+                  <p>Genre: Young Adult Dystopian</p>
+                  <a href="BookDescription.html">View Details</a> |
+                  <a href="borrow.html">Borrow</a>
+               </div>
+            </div>
+         </section>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="footer">
+         <div class="footer-container">
             <div class="footer-icon">
-                <a href="https://github.com/nouran8890/OnlineLibrary.git"><i class="fa fa-github" ></i></a>
+               <a href="https://github.com/nouran8890/OnlineLibrary.git"><i class="fa fa-github"></i></a>
             </div>
             <div class="footer-nav">
-                <ul><li><a href="./aboutus.html">About</a></li>
-                    <li><a href="./contactUs.html">Contact Us</a></li>
-                    <li><a href="./ourTeam.html">our Team</a></li>
-                </ul>
+               <ul>
+                  <li><a href="./aboutus.html">About</a></li>
+                  <li><a href="./contactUs.html">Contact Us</a></li>
+                  <li><a href="./ourTeam.html">our Team</a></li>
+               </ul>
             </div>
-        </div>
-        <div id="footer-bottom">
+         </div>
+         <div id="footer-bottom">
             <p>Copyright &copy; 2025 Designed by <span class="designer">FCAI Team</span></p>
-        </div>
-    </footer>
- </body>
- </html>
+         </div>
+      </footer>
+   </body>
+</html>
