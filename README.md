@@ -6,4 +6,4 @@ Web Technology Project
 
 <p>It's constantly improving and aims to be one of the best! </p>
 
-2025/04/16 : Almost finish our html & css 
+2025/04/16 : Almost finish all files and going on the JS isA
