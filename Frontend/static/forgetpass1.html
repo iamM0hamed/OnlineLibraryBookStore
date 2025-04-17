@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <title>Forget Password</title>
     <link rel="stylesheet" href="Css/Sign_style.css">
-    <link rel="stylesheet" href="Css/styles.css">
 </head>
 <body>
     <!-- Here We need to check the user input is email
     but without input submit  -->
-    <form class="content" action="forgetpass2.html">
-        <h1>Forget Password ?</h1>
-        follow this steps to set a new Password
-        <br><br>
-        <label for="email">Enter Your E-mail:</label><br>
-        <input type="email" id="username" name="email" required>
-        <br><br>
-        <input class="buttonlink" type="submit" value="Next">
-        
-    </form>
+
+    <div class="form-container">
+        <form class="forget1" action="forgetpass2.html">
+
+            <h1>Forget Password ? <br>Follow this steps to set a new Password</h1>
+            <input type="email" id="username" name="email" placeholder="Enter Your E-mail" required>
+            <br><br>
+            
+            <div class="submit-group">
+                <input class="buttonlink" type="submit" value="Next">
+            </div>
+        </form>
+    </div>
 
     <div class="video-background">
         <video autoplay muted loop>
@@ -27,5 +29,7 @@
         </video>
         <div class="video-overlay"></div> <!-- Overlay div -->
     </div>
+
+    
 </body>
 </html>
