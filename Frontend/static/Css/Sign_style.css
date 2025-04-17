@@ -1,16 +1,7 @@
-body{
+* {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-}
-
-h1{
-    color:white;
-    text-align: center;
-    display: block;
-    font-size: 55px;
-    
+    box-sizing: border-box;
 }
 
 .video-background {
@@ -20,83 +11,144 @@ h1{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1;
-}
-#bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-    object-fit: cover;
-    z-index: -1;
+    z-index: 0; /* Use a positive z-index */
 }
 
-
-.video-background video{
+.video-background video {
+    width: 100%; /* Set width to 100% */
+    height: 100%; /* Set height to 100% */
+    object-fit: cover; /* Ensure the video covers the area */
     position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.video-overlay{
+.video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for opacity */
+    z-index: 1; /* Bring overlay above the video */
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Add some space below the heading */
+    font-family: sans-serif;
 }
 
-.content{
-    color: white;
+
+.form-container {
+    margin-top: 100px;
+    position: relative; /* Position relative to the video background */
+    z-index: 1; /* Ensure it is above the video and overlay */
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 150vh;
-    padding-top: 120px;
-    gap: 30px;
-    position: relative;
-    z-index: 2;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    color: white; /* Text color */
+    flex-wrap: wrap;
+
 }
 
-.inputs-container{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 30px 100px;
+
+.form-group {
+    display: flex; /* Use flexbox to align items horizontally */
+    flex-direction: row; /* Stack labels and inputs vertically */
+    align-items: center; /* Center items horizontally */
+    margin: 10px 0; /* Add some margin for spacing */
+    flex-wrap: wrap;
+    width: 450px;
+    justify-content: start;
 }
 
-.Name, .pass, .mail{
+.input-group {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* Stack label above input */
+    margin: 0 10px; /* Add horizontal spacing between input groups */
+    flex-wrap: wrap;
 }
 
-.Name input, .pass input, .mail input{
-    border-radius: 17px;
-    padding: 9px;
-    font-size: 18px;
-    width: 250px;
-}
 
-.buttons-container{
-    display: flex;
-    gap: 20px;
-    margin-top: 50px;
-}
-
-button[type="submit"]{
-    background-color: #74641d;
-    color: white;
-    padding: 10px 25px;
-    font-size: 18px;
-    margin-left: 270px;
+input {
+    padding: 5px;
     border: none;
     border-radius: 25px;
-    cursor: pointer ;
+    width: 90%;
+    margin: 10px;
+    height: 35px;
 }
+
+.form-container .buttonlink{
+    display: flex;
+    background-color: #c7a71a;
+    color: #fff3bd;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+    width: 100px;
+    height: 25px;
+    
+}
+
+.form-container .buttonlink:hover {
+
+    background-color: #897001; /* Darker blue on hover */
+    transform: scale(1.05);
+
+}
+
+.submit-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%; /* Use full width to center the button */
+
+    justify-content: center; /* Center the button */
+}
+
+.form-container .submit-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 92%; /* Use full width to center the button */
+
+    justify-content: center; /* Center the button */
+}
+
+
+
+a{
+    color: white;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+a:hover{
+    color:rgb(244, 207, 138);
+    transform: scale(1.05);
+}
+
+
+.full-width{
+    flex-basis:93%;
+}
+
+.email{
+    width:100%;
+    box-sizing: border-box;
+}
+
+
+.form-group.buttonlink {
+    display: flex; /* Use flexbox to align items horizontally */
+    flex-direction: column; /* Stack labels and inputs vertically */
+    align-items: center; /* Center items horizontally */
+    margin: 10px 0; /* Add some margin for spacing */
+    flex-wrap: wrap;
+    width: 450px;
+}
+
