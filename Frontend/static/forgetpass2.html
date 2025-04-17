@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <title>forgetpass2</title>
     <link rel="stylesheet" href="Css/Sign_style.css">
-    <link rel="stylesheet" href="Css/styles.css">
 </head>
 <body>
     
     <!-- here we need to check if the user enter 6 characters i asked ai he tell me with javaScript  -->
-    
-    <form class="content" action="setNewPass.html">
-        <h1>We send Code of 8 characters to your mail</h1>
-        <label for="codeOF6">Enter the code</label><br>
-        <input type="text" id="username" name="codeOF6" required><br>
-        <a href="setNewPass.html">
-            <br>
-            <input class="buttonlink" type="submit" value="Next">
-        </a>
-    </form>
+    <div class="form-container">
+        <form class="content" action="setNewPass.html">
+            <h1>We send Code of 8 characters to your mail</h1>
+            <input type="text" id="username" name="codeOF6" placeholder="Enter the code" required><br>
+            
+            <div class="submit-group">
+                <input class="buttonlink" type="submit" value="Next">
+            </div>
+
+        </form>
+    </div>
 
     <div class="video-background">
         <video autoplay muted loop>
