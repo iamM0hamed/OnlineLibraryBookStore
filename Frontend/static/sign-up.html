@@ -2,65 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign-up</title>
+    <title>Sign-in</title>
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Css/Sign_style.css">
 </head>
 <body>
-
-    <h1>Welcome to Our Library <br>Let's Create Account </h1>
-    <br><br>
-
-    <div class="content">
-
-
-        <form id="signup" action="dashboard.html">
-
-            <div class="Name">
-
-                <label for="Fname" class="Fname">First Name:</label><br>
-                <input type="text" id="username" name="Fname" required>
-                <br><br>
-                <label for="Lname">Last Name:</label><br>
-                <input type="text" id="username" name="Lname" required>
-            </div>
-            <br>
-
-        <div class="pass">
-            <label for="pass">Password:</label><br>
-            <input type="text" id="password" name="pass" required>
-        
-            
-            <br> <br>
-            <label for="pass">Re-Password:</label><br>
-            <input type="text" id="password" name="pass" required>
-            <br><br>
-       
-        </div>
-        <br>
-
-        <div class="mail">
-            <label for="email">E-mail:  </label><br>
-            <input type="email" id="username" name="email" required>
-        </div>
-        <br>
-
-        <div class="button">
-            <input class="buttonlink" type="submit" value="Submit">
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+  
+  <div class="form-container">
+    <form class="flex-form" action="index.html">
+      <h1>Welcome to Our Library <br> Let's Creat an account</h1>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" id="Fname" name="Fname" required placeholder="First name">
         </div>
 
-        </form>
-    </div>
+        <div class="input-group">
+          <input type="text" id="Lname" name="Lname" required placeholder="Last name">
+        </div>
 
+        <div class="input-group full-width">
+          <input type="email" id="email" name="email" required placeholder="E-mail">
+        </div>
 
+        <div class="input-group">
+          <input type="password" id="password" name="password" required placeholder="Password">
+        </div>
 
+        <div class="input-group">
+          <input type="password" id="pass" name="pass" required placeholder="Confirm Password">
+        </div>
+      </div>
 
-    <div class="video-background">
-        <video autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div> <!-- Overlay div -->
-    </div>
+      <div class="submit-group">
+        <input class="buttonlink" type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
 </body>
 </html>
