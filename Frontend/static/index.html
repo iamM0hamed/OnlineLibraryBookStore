@@ -2,24 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Css/Sign_style.css">
-    <link rel="stylesheet" href="Css/styles.css">
-    <title>Library</title>
 </head>
 <body>
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+  
+  <div class="form-container">
+    <form class="flex-form" action="dashboard.html">
+      <h1>Welcome to Our Library <br> Let's Sign-in</h1>
+      <div class="form-group">
 
-    <div class="content">
-        <a class="buttonlink" href="log-in.html">log in</a>
-        <a class="buttonlink" href="sign-up.html">sign in</a>
+        <div class="input-group">
+          <input type="text" id="username" name="username" placeholder="Username" required>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" name="password" required placeholder="Password">
+        </div>
+
+        <div class="submit-group">
+          <input class="buttonlink" type="submit" value="Submit">
+          <a href="forgetpass1.html" class="forgetpass1">Forget Password?</a>
+          
+          <a href="sign-up.html" class="newAcc">Create a new account?</a>
+        </div>
         
-    </div>
-    <div class="video-background">
-        <video autoplay muted loop>
-            <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div> <!-- Overlay div -->
-    </div>
+
+      </div>
+    </form>
+  </div>
 </body>
 </html>
