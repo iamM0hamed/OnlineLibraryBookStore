@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <title>Set New Password</title>
     <link rel="stylesheet" href="Css/Sign_style.css">
-    <link rel="stylesheet" href="Css/styles.css">
 </head>
 <body>
     <!-- Here we need to check if the two boxes of new password are the same
     ai tell me with JavaScript -->
-    
-    <form class="content" action="dashboard.html">
-        <h1>Set Your New Password</h1>
-    
-        <label for="newpass">Enter New Password:</label><br>
-        <input type="text" id="password" name="newpass" required>
-        <br> <br>
-        <label for="newpass">Re-Enter Password:</label><br>
-        <input type="text" id="password" name="newpass" required>
-        <br><br>
-        <input class="buttonlink" type="submit" value="Submit">
-    </form>
+    <div class="form-container">
+        <form class="content" action="dashboard.html">
+            <h1>Set Your New Password</h1>
+
+            <input type="password" id="password" name="newpass" placeholder="Enter New Password" required>
+
+            <input type="password" id="password" name="newpass" placeholder="Re-Enter Password" required>
+            <div class="submit-group">
+                <input class="buttonlink" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
 
     <div class="video-background">
         <video autoplay muted loop>
