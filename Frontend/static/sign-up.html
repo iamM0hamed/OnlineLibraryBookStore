@@ -5,6 +5,7 @@
     <title>Sign-in</title>
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Css/Sign_style.css">
+    <script src="../dynamic/signIn.js" defer></script>
 </head>
 <body>
   <div class="video-background">
@@ -38,7 +39,15 @@
         <div class="input-group">
           <input type="password" id="pass" name="pass" required placeholder="Confirm Password">
         </div>
+        <div class="input-group">
+          <input type="checkbox" id="admin-checkbox" name="admin-checkbox"> Admin Account
+        </div>
+        
+        <div class="input-group" id="secret-key-group" style="display: none;">
+          <input type="password" id="secret-key" name="secret-key" placeholder="Enter Secret Key">
+        </div>
       </div>
+      <div id="error-message" style="color: red; font-weight: bold; display: none;"></div>
 
       <div class="submit-group">
         <input class="buttonlink" type="submit" value="Submit">
