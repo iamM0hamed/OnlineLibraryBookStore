@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
     <title>Footer</title>
- 
+    <script src="footer.js" defer></script>
     <link rel="stylesheet" href="./Css/footer.css">
     <!-- Github Icon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,23 +17,59 @@
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab odio assumenda, architecto quasi maiores et labore! Deleniti vel hic nostrum earum, autem nulla dolorem neque corporis veritatis rerum ratione fugiat?
     </p>
-
-    <footer class="footer">
+    <!-- Modal for About Popup -->
+    <div class="modal" id="about-modal">
+        <div class="modal-content">
+          <h1>About</h1>
+          <p>
+            Welcome to our library! We are dedicated to providing a vast
+            collection of books for reading and borrowing. Our mission is to
+            promote knowledge, education, and a love for literature in our
+            community.
+          </p>
+          <p>
+            Our library offers a diverse selection of books across different
+            genres, ensuring that every reader finds something of interest.
+            Whether you enjoy fiction, non-fiction, academic materials, or
+            children's books, we have something for everyone.
+          </p>
+          <p>
+            We also offer a book lending service, allowing members to borrow books
+            and enjoy them at their own convenience. Our friendly staff is always
+            available to help you find the perfect book or answer any questions
+            you may have.
+          </p>
+          <p>
+            Thank you for visiting our library. We look forward to seeing you
+            soon!
+          </p>
+          <div class="close-btn">&times;</div>
+        </div>
+      </div>
+      <footer class="footer">
         <div class="footer-container">
-            <div class="footer-icon">
-                <a href="https://github.com/nouran8890/OnlineLibrary.git"><i class="fa fa-github" ></i></a>
-            </div>
-            <div class="footer-nav">
-                <ul><li><a href="./aboutus.html">About</a></li>
-                    <li><a href="./contactUs.html">Contact Us</a></li>
-                    <!-- Later Add Another page -->
-                    <li><a href="./ourTeam.html">our Team</a></li>
-                </ul>
-            </div>
+          <div class="footer-icon">
+            <a href="https://github.com/nouran8890/OnlineLibrary.git"
+              ><i class="fa fa-github"></i
+            ></a>
+          </div>
+          <div class="footer-nav">
+            <ul>
+              <li>
+                <a class="about-modal" href="#" id="open-about-modal">About</a>
+              </li>
+              <li><a href="./contactUs.html">Contact Us</a></li>
+              <!-- Later Add Another page -->
+              <li><a href="./ourTeam.html">our Team</a></li>
+            </ul>
+          </div>
         </div>
         <div id="footer-bottom">
-            <p>Copyright &copy;2025 Designed by <span class="designer">FCAI Team</span></p>
+          <p>
+            Copyright &copy; 2025 Designed by
+            <span class="designer">FCAI Team</span>
+          </p>
         </div>
-    </footer>
+      </footer>
 </body>
 </html>
