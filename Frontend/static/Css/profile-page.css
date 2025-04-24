@@ -97,13 +97,21 @@ body .navbar .nav-container .nav-links {
 .favorite-books,
 .recent-borrowed {
    padding: 20px 24px;
-   border-bottom: 2px solid #7e8282;
+   /* border-bottom: 2px solid #7e8282; */
 }
 
 .favorite-books:last-child,
 .recent-borrowed:last-child {
    border-bottom: none;
 }
+
+.fav-bor-books {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
 
 .favorite-books h3,
 .recent-borrowed h3 {
@@ -113,19 +121,46 @@ body .navbar .nav-container .nav-links {
    margin-bottom: 12px;
    position: relative;
    padding-bottom: 8px;
+   border-bottom: 1px solid black;
 }
 
 .favorite-books h3::after,
 .recent-borrowed h3::after {
-   content: "";
+   content: '+';
    position: absolute;
-   left: 0;
-   bottom: 0;
-   height: 3px;
-   width: 40px;
-   background-color: #5a667b;
-   border-radius: 3px;
+   right: -10px;
 }
+
+.favorite-books .fav-list,
+.recent-borrowed .borrowed-list {
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.5s ease-in-out;
+}
+
+.favorite-books h3:hover,
+.recent-borrowed h3:hover {
+    cursor: pointer;
+    color: #5a667b; 
+}
+
+/* JavaScript Stylink Link */
+
+.fav-bor-books .favorite-books.active .fav-list,
+.fav-bor-books .recent-borrowed.active .borrowed-list {
+   max-height: 500px; 
+   overflow-y: auto;
+}
+
+.fav-bor-books .favorite-books.active h3::after,
+.fav-bor-books .recent-borrowed.active h3::after {
+   content:'-';
+   font-size: 25px;
+   transition: 0.5s;
+
+   
+}
+
 
 .favorite-books ul,
 .recent-borrowed ul {
