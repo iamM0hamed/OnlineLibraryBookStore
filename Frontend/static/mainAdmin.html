@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Admin</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    
+    <link rel="stylesheet" href="Css/dashboard.css">
+    <link rel="stylesheet" href="Css/Nav.css">
+    <link rel="stylesheet" href="Css/footer.css">
+    <link rel="stylesheet" href="Css/Sign_style.css">
 
-      <link rel="stylesheet" href="Css/dashboard.css" />
-      <link rel="stylesheet" href="Css/Nav.css" />
-      <link rel="stylesheet" href="Css/footer.css" />
-      <link rel="stylesheet" href="Css/Sign_style.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-   </head>
-   <body>
-      <nav class="navbar">
-         <div class="nav-container">
+    <script src="./JavaScript/footer.js" defer></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
             <ul class="nav-links">
                <li>
                   <a href="dashboard.html"><i class="fas fa-home"></i>Home</a>
@@ -122,49 +125,30 @@
                   </div>
                </div>
 
-               <!-- Book 7 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book7.jpg" alt="Book 7 Cover" />
-                  <h3>To Kill a Mockingbird</h3>
-                  <p>Author: Harper Lee</p>
-                  <p>Genre: Classic</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
+              <!-- Book 7 -->
+              <div class="book-card">
+                 <img src="book7.jpg" alt="Book 7 Cover" />
+                 <h3>To Kill a Mockingbird</h3>
+                 <p>Author: Harper Lee</p>
+                 <p>Genre: Classic</p>
+                 <a href="BookDescription.html">View Details</a> |
+                 <a href="borrow.html">Borrow</a>
+              </div>
 
-               <!-- Book 8 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book8.jpg" alt="Book 8 Cover" />
-                  <h3>The Hunger Games</h3>
-                  <p>Author: Suzanne Collins</p>
-                  <p>Genre: Young Adult Dystopian</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
-            </div>
-         </section>
-      </div>
-      <!-- Footer Section -->
-      <footer class="footer">
-         <div class="footer-container">
-            <div class="footer-icon">
-               <a href="https://github.com/nouran8890/OnlineLibrary.git"><i class="fa fa-github"></i></a>
-            </div>
-            <div class="footer-nav">
-               <ul>
-                  <li><a href="./aboutus.html">About</a></li>
-                  <li><a href="./contactUs.html">Contact Us</a></li>
-                  <li><a href="./ourTeam.html">our Team</a></li>
-               </ul>
-            </div>
-         </div>
-         <div id="footer-bottom">
-            <p>Copyright &copy; 2025 Designed by <span class="designer">FCAI Team</span></p>
-         </div>
-      </footer>
-   </body>
+
+              <!-- Book 8 -->
+              <div class="book-card">
+                 <img src="book8.jpg" alt="Book 8 Cover" />
+                 <h3>The Hunger Games</h3>
+                 <p>Author: Suzanne Collins</p>
+                 <p>Genre: Young Adult Dystopian</p>
+                 <a href="BookDescription.html">View Details</a> |
+                 <a href="borrow.html">Borrow</a>
+              </div>
+           </div>
+        </section>
+     </div>
+    <!-- Add the Footer Using JavaScript -->
+    <div id="footer-placeholder"></div>
+</body>
 </html>
