@@ -8,6 +8,8 @@
     <script src="../dynamic/signIn.js" defer></script>
 </head>
 <body>
+  <div id="navbar-placeholder"></div>
+
   <div class="video-background">
     <video autoplay muted loop playsinline id="bg-video">
       <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
@@ -54,5 +56,12 @@
       </div>
     </form>
   </div>
+  <script>
+    fetch('Navigationbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
 </body>
 </html>
