@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
 <head>
- 
     <meta charset="UTF-8">
- 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
     <title>Contact Us</title>
- 
     <link rel="stylesheet" href="./Css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./Css/navbar.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <!-- back to dashboard button -->
@@ -19,21 +17,31 @@
     <!-- Contact Us Form -->     
      <section id="contact-us"> 
         <div class="container">
-                <h2>Contact Us</h2>
+            <h2>CONTACT US</h2>
             <div class="contact-us-form">
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
 
-                <button type="submit">Send Message</button>
-            </form>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
         </div>
-    </div>
     </section>
+
+    <script>
+        fetch('./Navigationbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
 </html>
