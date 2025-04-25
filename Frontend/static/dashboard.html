@@ -12,7 +12,6 @@
       
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
    </head>
    <body>
       <!-- Navigation -->
@@ -49,6 +48,13 @@
             <div class="book-grid">
                <!-- Book 1 -->
                <div class="book-card" onclick="window.location.href='BookDescription.html';" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite1" />
+                     <label for="favorite1" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
+
                   <img src="book1.jpg" alt="Book 1 Cover" />
                   <h3>The Shining</h3>
                   <p>Author: Stephen King</p>
@@ -61,6 +67,12 @@
 
                <!-- Book 2 -->
                <div class="book-card" onclick="window.location.href='BookDescription.html';" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite2" />
+                     <label for="favorite2" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
                   <img src="book2.jpg" alt="Book 2 Cover" />
                   <h3>The Hitchhiker's Guide to the Galaxy</h3>
                   <p>Author: Douglas Adams</p>
@@ -73,30 +85,48 @@
 
                <!-- Book 3 -->
                <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite3" />
+                     <label for="favorite3" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
                   <img src="book3.jpg" alt="Book 3 Cover" />
                   <h3>Dune</h3>
                   <p>Author: Frank Herbert</p>
                   <p>Genre: Science Fiction</p>
-                 <div class="book-actions">
-                  <a href="BookDescription.html">View Details</a> |
-                  <a href="borrow.html" onclick="event.location.stopPropagation();">Borrow</a>
-                 </div>
+                  <div class="book-actions">
+                     <a href="BookDescription.html">View Details</a> |
+                     <a href="borrow.html" onclick="event.stopPropagation();">Borrow</a>
+                  </div>
                </div>
 
                <!-- Book 4 -->
                <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite4" />
+                     <label for="favorite4" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
                   <img src="book4.jpg" alt="Book 4 Cover" />
                   <h3>The Chronicles of Narnia</h3>
                   <p>Author: C.S. Lewis</p>
                   <p>Genre: Fantasy</p>
                   <div class="book-actions">
                      <a href="BookDescription.html">View Details</a> |
-                     <a href="borrow.html" onclick="event.location.stopPropagation();">Borrow</a>
+                     <a href="borrow.html" onclick="event.stopPropagation();">Borrow</a>
                   </div>
                </div>
 
                <!-- Book 5 -->
                <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite5" />
+                     <label for="favorite5" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
                   <img src="book5.jpg" alt="Book 5 Cover" />
                   <h3>The Da Vinci Code</h3>
                   <p>Author: Dan Brown</p>
@@ -109,6 +139,12 @@
 
                <!-- Book 6 -->
                <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite6" />
+                     <label for="favorite6" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
                   <img src="book6.jpg" alt="Book 6 Cover" />
                   <h3>The Great Gatsby</h3>
                   <p>Author: F. Scott Fitzgerald</p>
@@ -121,6 +157,12 @@
 
                <!-- Book 7 -->
                <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite7" />
+                     <label for="favorite7" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
                   <img src="book7.jpg" alt="Book 7 Cover" />
                   <h3>To Kill a Mockingbird</h3>
                   <p>Author: Harper Lee</p>
@@ -132,7 +174,13 @@
                </div>
 
                <!-- Book 8 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer" >
+               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
+                  <div onclick="event.stopPropagation();">
+                     <input type="checkbox" id="favorite8" />
+                     <label for="favorite8" class="favorite-btn">
+                        <i class="fa-solid fa-heart"></i>
+                     </label>
+                  </div>
                   <img src="book8.jpg" alt="Book 8 Cover" />
                   <h3>The Hunger Games</h3>
                   <p>Author: Suzanne Collins</p>

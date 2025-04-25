@@ -35,6 +35,7 @@ body {
 }
 
 .book-card {
+   position: relative;
    background-color: #f9f9f9;
    border: 1px solid #ddd;
    border-radius: 10px;
@@ -89,29 +90,6 @@ body {
 .book-card a:hover {
    text-decoration: underline;
 }
-
-/* Admin Button */
-.admin-link,
-button {
-   display: block;
-   text-align: center;
-   margin: 30px auto;
-   padding: 15px 25px;
-   color: white;
-   background-color: #74641d;
-   text-decoration: none;
-   border-radius: 5px;
-   width: 200px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   font-weight: bold;
-}
-
-.admin-link:hover {
-   background-color: #5a4e16;
-   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-   transform: translateY(-5px);
-}
-
 .custom-height {
    height: 250px !important;
    overflow: hidden;
@@ -127,3 +105,48 @@ button {
    margin-top: auto;
    padding-top: 10px;
 }
+#favorite1, #favorite2, #favorite3, #favorite4, #favorite5, #favorite6, #favorite7, #favorite8 {
+   display: none;
+}
+
+.favorite-btn {
+   color: gray;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   z-index: 1000;
+   background-color: white;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: transform 0.2s, color 0.2s;
+}
+
+.favorite-btn:hover {
+   transform: scale(1.1);
+}
+
+.favorite-btn i {
+   transition: color 0.3s ease;
+}
+
+input[type="checkbox"]:checked + .favorite-btn {
+   color: red;
+}
+
+input[type="checkbox"]:checked + .favorite-btn i {
+   color: red;
+   animation: heartbeat 0.4s ease-in-out;
+}
+
+@keyframes heartbeat {
+   0%, 100% { transform: scale(1); }
+   50% { transform: scale(1.2); }
+}
+
+

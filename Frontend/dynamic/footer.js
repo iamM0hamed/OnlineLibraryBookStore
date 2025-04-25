@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="footer-container">
                 <div class="footer-icon">
                     <a href="https://github.com/nouran8890/OnlineLibrary.git"
-                    ><i class="fa fa-github"></i
+                    ><i class="fab fa-github"></i
                     ></a>
                 </div>
                 <div class="footer-nav">
