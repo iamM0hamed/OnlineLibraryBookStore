@@ -9,6 +9,7 @@
     <title>About Us</title>
 </head>
 <body id="aboutbody">
+    <div id="navbar-placeholder"></div>
     <div class="about">
             <h1>About Us</h1>
             <p>Welcome to our library! We are dedicated to providing a vast collection of books for reading and borrowing. Our mission is to promote knowledge, education, and a love for literature in our community.</p>
@@ -16,5 +17,12 @@
             <p>We also offer a book lending service, allowing members to borrow books and enjoy them at their own convenience. Our friendly staff is always available to help you find the perfect book or answer any questions you may have.</p>
             <p>Thank you for visiting our library. We look forward to seeing you soon!</p>
         </div>
+        <script>
+            fetch('Navigationbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+        </script>
 </body>
 </html>

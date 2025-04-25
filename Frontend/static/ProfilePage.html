@@ -17,27 +17,8 @@
    </head>
    <body>
       <!-- Navigation Bar part -->
-      <nav class="navbar">
-         <div class="nav-container">
-            <ul class="nav-links">
-               <li>
-                  <a href="dashboard.html"><i class="fas fa-home"></i> Home</a>
-               </li>
-               <li>
-                  <a href="sign-up.html"><i class="fas fa-sign-in-alt"></i> Sign in</a>
-               </li>
-               <li>
-                  <a href="ProfilePage.html"><i class="fas fa-user"></i> Profile</a>
-               </li>
-               <li>
-                  <a href="contactUs.html"><i class="fas fa-question-circle"></i> Help</a>
-               </li>
-               <li>
-                  <a href="aboutus.html"><i class="fas fa-info-circle"></i> About</a>
-               </li>
-            </ul>
-         </div>
-      </nav>
+      <div id="navbar-placeholder"></div>
+
       <!-- User profile part  -->
       <div class="profile-container">
          <div class="profile-section">
@@ -114,5 +95,13 @@
 
       <!-- Add the Footer Using JavaScript -->
       <div id="footer-placeholder"></div>
+      
+<script>
+   fetch('Navigationbar.html')
+       .then(response => response.text())
+       .then(data => {
+           document.getElementById('navbar-placeholder').innerHTML = data;
+       });
+</script>
    </body>
 </html>
