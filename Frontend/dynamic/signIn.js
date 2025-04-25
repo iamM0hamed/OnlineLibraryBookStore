@@ -30,6 +30,7 @@ document.getElementById('admin-checkbox').addEventListener('change', function ()
       Valid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       displayError('Please enter a valid email address.');
+      Valid=false;
     }
   
     // Password Validation
