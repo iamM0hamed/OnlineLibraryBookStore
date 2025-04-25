@@ -95,7 +95,7 @@
 .search-box {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255);
+    background: rgba(0, 0, 0);
     border-radius: 20px;
     padding: 5px 10px;
     backdrop-filter: blur(4px);
