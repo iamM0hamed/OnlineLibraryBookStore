@@ -1,22 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Description Of Book</title>
-    <link rel="stylesheet" href="Css/booddesc.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Description</title>
+  <link rel="stylesheet" href="./Css/bookdes.css"/>
+  <link rel="stylesheet" href="./Css/Nav.css"/>
+  <link rel="stylesheet" href="./Css/footer.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <script src="../dynamic/footer.js" defer></script>
+
 </head>
 <body>
-    <section id="display-book">
-        <div class="display-book-container">
-            <h2>Book Details</h2>
-            <div id="book-details">
-                <p><strong>Book ID:</strong> 12345</p>
-                <p><strong>Book Name:</strong> The Great Adventure</p>
-                <p><strong>Author:</strong> Jane Doe</p>
-                <p><strong>Category:</strong> Fiction</p>
-                <p><strong>Description:</strong> A thrilling tale of adventure and discovery.</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
+                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
+                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search about Book...">
+                <button><i class="fas fa-search"></i></button>
             </div>
         </div>
-    </section>
+    </nav>
+  <div class="book-container">
+    <div class="book-info">
+      <h2>Life Style</h2>
+      <ul>
+        <li><strong>Author :</strong> Zyad Al-abiad</li>
+        <li><strong>language :</strong> English</li>
+        <li><strong>Pages :</strong> 5006</li>
+        <li><strong>Creation Date :</strong> 2025</li>
+      </ul>
+      <p class="Borrow-books">To Borrow This Book </p>
+      <div class="actions">
+        <form>
+            <label for="Borrow-Date"> <b>Borrow Date :</b></label>
+            <input type="date" id="Borrow-Date" name="Borrow-Date" required>
+            <label for="Return-Date"><b>Return Date :</b></label>
+            <input type="date" id="Return-Date" name="Return-Date" required>
+        </form>
+      </div>
+    </div>
+
+    <div class="book-cover">
+      <img src="book-cover.jpg" alt="Book Image"/>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
 </body>
 </html>
