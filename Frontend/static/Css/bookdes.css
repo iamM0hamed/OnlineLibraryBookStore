@@ -1,77 +1,87 @@
 /* Container for the whole book details page */
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   position: relative;
+}
+
 .book-details-container {
-    display: flex;
-    flex-direction: column; /* For mobile responsiveness */
-    align-items: center;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
-    background-color: #f9f9f9; /* Soft background for contrast */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-radius: 10px; /* Rounded edges for a modern look */
-    font-family: 'Arial', sans-serif;
+   display: flex;
+   flex-direction: column; /* For mobile responsiveness */
+   align-items: center;
+   margin: 20px auto;
+   padding: 20px;
+   max-width: 800px;
+   background-color: #f9f9f9; /* Soft background for contrast */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+   border-radius: 10px; /* Rounded edges for a modern look */
+   font-family: "Arial", sans-serif;
 }
 
 /* Book cover image styling */
 .book-cover img {
-    border-radius: 5px;
-    margin-bottom: 10px;
-    object-fit: cover;
-    height: 200px;
-    width: 150px;
-    margin: 0 auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
- }
+   border-radius: 5px;
+   margin-bottom: 10px;
+   object-fit: cover;
+   height: 200px;
+   width: 150px;
+   margin: 0 auto;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
 /* Book info styling */
 .book-info {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
+   text-align: center;
+   margin-top: 20px;
+   padding: 10px;
 }
 
 .book-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333; /* Darker text for better readability */
+   font-size: 2rem;
+   font-weight: bold;
+   margin-bottom: 10px;
+   color: #333; /* Darker text for better readability */
 }
 
 .book-author {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-    color: #555;
+   font-size: 1.5rem;
+   font-weight: 500;
+   margin-bottom: 15px;
+   color: #555;
 }
 
 .book-category,
 .book-description {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #666;
-    line-height: 1.6;
+   font-size: 1.1rem;
+   margin-bottom: 15px;
+   color: #666;
+   line-height: 1.6;
 }
-
-
 
 /* Style the buttons */
 .borrow-button {
-    display: inline-block;
-    background-color: #c7a71a; /* Button background color */
-    color: white; /* Text color */
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2em; /* Adjust text size */
-    font-weight: bold; /* Make text bold */
-    padding: 10px 20px; /* Add spacing inside the button */
-    border-radius: 8px; /* Rounded corners */
-    margin: 10px; /* Space between buttons */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s, background-color 0.3s ease-in-out;
+   display: inline-block;
+   background-color: #c7a71a; /* Button background color */
+   color: white; /* Text color */
+   text-align: center;
+   text-decoration: none;
+   font-size: 1.2em; /* Adjust text size */
+   font-weight: bold; /* Make text bold */
+   padding: 10px 20px; /* Add spacing inside the button */
+   border-radius: 8px; /* Rounded corners */
+   margin: 10px; /* Space between buttons */
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+   transition: transform 0.2s, background-color 0.3s ease-in-out;
 }
 
 /* Hover effect */
 .borrow-button:hover {
-    background-color: #b99b16; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight lift */
+   background-color: #b99b16; /* Darker shade on hover */
+   transform: scale(1.05); /* Slight lift */
 }
+
+#footer-placeholder {
+   margin-top: auto;
+}
+
