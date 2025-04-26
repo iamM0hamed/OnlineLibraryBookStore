@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./Css/footer.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <script src="../dynamic/footer.js" defer></script>
+  <script src="../dynamic/detailes.js" defer></script>
 
 </head>
 <body>
@@ -16,7 +17,7 @@
         <div class="nav-container">
             <ul class="nav-links">
                 <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Log out</a></li>
                 <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
                 <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
                 <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
@@ -27,30 +28,7 @@
             </div>
         </div>
     </nav>
-  <div class="book-container">
-    <div class="book-info">
-      <h2>Life Style</h2>
-      <ul>
-        <li><strong>Author :</strong> Zyad Al-abiad</li>
-        <li><strong>language :</strong> English</li>
-        <li><strong>Pages :</strong> 5006</li>
-        <li><strong>Creation Date :</strong> 2025</li>
-      </ul>
-      <p class="Borrow-books">To Borrow This Book </p>
-      <div class="actions">
-        <form>
-            <label for="Borrow-Date"> <b>Borrow Date :</b></label>
-            <input type="date" id="Borrow-Date" name="Borrow-Date" required>
-            <label for="Return-Date"><b>Return Date :</b></label>
-            <input type="date" id="Return-Date" name="Return-Date" required>
-        </form>
-      </div>
-    </div>
-
-    <div class="book-cover">
-      <img src="book-cover.jpg" alt="Book Image"/>
-    </div>
-  </div>
+    <div id="bookDetails"></div>
   <div id="footer-placeholder"></div>
 </body>
 </html>

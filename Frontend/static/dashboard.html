@@ -43,36 +43,5 @@
 
       <!-- Add the Footer Using JavaScript -->
       <div id="footer-placeholder"></div>
-      <script>
-         document.addEventListener("DOMContentLoaded", function () {
-            const searchInput = document.querySelector(".search-box input");
-            const searchButton = document.querySelector(".search-box button");
-            const bookCards = document.querySelectorAll(".book-card");
-      
-            function searchBooks() {
-               const query = searchInput.value.toLowerCase().trim();
-      
-               bookCards.forEach((card) => {
-                  const title = card.querySelector("h3").textContent.toLowerCase();
-                  const author = card.querySelector("p").textContent.toLowerCase();
-      
-                  if (title.includes(query) || author.includes(query)) {
-                     card.style.display = "block";
-                  } else {
-                     card.style.display = "none";
-                  }
-               });
-            }
-      
-            
-            searchButton.addEventListener("click", function (e) {
-               e.preventDefault();
-               searchBooks();
-            });
-      
-            
-            searchInput.addEventListener("input", searchBooks);
-         });
-      </script>
    </body>
 </html>

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     books.forEach(book => {
         const bookCard = document.createElement('div');
         bookCard.classList.add('book-card');
-        bookCard.setAttribute('onclick', "window.location.href = 'BookDescription.html';");
+        bookCard.setAttribute('onclick', `window.location.href = 'BookDescription.html?bookID=${book.bookID}';`);
         bookCard.style.cursor = 'pointer';
 
         bookCard.innerHTML = `
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>Author: ${book.author}</p>
         <p>Genre: ${book.category}</p>
         <div class="book-actions">
-            <a href="borrow.html" onclick="event.stopPropagation();">Borrow</a>
+            <a href="borrow.html?bookID=${book.bookID}" onclick="event.stopPropagation();">Borrow</a>
         </div>
         `;
         bookContainer.appendChild(bookCard); // Add the card to the container
