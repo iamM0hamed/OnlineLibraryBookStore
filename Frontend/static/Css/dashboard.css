@@ -29,9 +29,10 @@ body {
 }
 
 .book-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   gap: 20px;
+   display: grid; /* Ensure items are in a grid layout */
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adaptive columns */
+   gap: 20px; /* Spacing between items */
+   justify-content: center; /* Optional: Center grid within parent */
 }
 
 .book-card {
@@ -48,6 +49,8 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   flex: none; /* Prevent unwanted flex behavior */
+   max-width: 100%; /* Ensure it fits within grid column */
 }
 
 .book-card:hover {
@@ -105,7 +108,8 @@ body {
    margin-top: auto;
    padding-top: 10px;
 }
-#favorite1, #favorite2, #favorite3, #favorite4, #favorite5, #favorite6, #favorite7, #favorite8 {
+
+input[type="checkbox"] {
    display: none;
 }
 
@@ -137,9 +141,6 @@ body {
 
 input[type="checkbox"]:checked + .favorite-btn {
    color: red;
-   span{
-      color: red;
-   }
 }
 
 input[type="checkbox"]:checked + .favorite-btn i {
@@ -153,6 +154,7 @@ input[type="checkbox"]:checked + .favorite-btn i {
 }
 
 
+
 .favorite-counter {
    position: absolute;
    top: 40px;
@@ -163,4 +165,27 @@ input[type="checkbox"]:checked + .favorite-btn i {
 .favorite-number {
    font-size: 12px;
    color: gray;
+}
+
+.addbook {
+   display: flex;
+   background-color: #c7a71a;
+   color: #ffffff;
+   border: none;
+   border-radius: 3px;
+   margin-top: 20px;
+   padding: 8px 16px; /* Adds spacing inside the button */
+   width: fit-content; /* Ensures the button only takes up as much space as needed */
+   justify-content: center;
+   align-items: center;
+   text-decoration: none;
+   cursor: pointer;
+   font-size: 1em; /* Slightly larger text */
+   font-weight: bold;
+   transition: transform 0.2s, background-color 0.3s;
+}
+
+.addbook:hover {
+   background-color: #897001;
+   transform: scale(1.05);
 }

@@ -95,7 +95,7 @@
 .search-box {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0);
+    background: rgb(255, 255, 255);
     border-radius: 20px;
     padding: 5px 10px;
     backdrop-filter: blur(4px);
@@ -107,7 +107,7 @@
 .search-box input {
     border: none;
     background: transparent;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 16px;
     outline: none;
     width: 100%;
@@ -142,25 +142,5 @@
 
     .search-box input {
         width: 100%;
-    }
-}
-
-@keyframes shine {
-    0% {
-        left: -75%;
-    }
-    100% {
-        left: 125%;
-    }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

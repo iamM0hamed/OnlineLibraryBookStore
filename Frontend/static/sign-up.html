@@ -6,6 +6,7 @@
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Css/Sign_style.css">
     <script src="../dynamic/signIn.js" defer></script>
+    <script src="../dynamic/nav.js" defer></script>
 </head>
 <body>
   <div id="navbar-placeholder"></div>
@@ -56,12 +57,5 @@
       </div>
     </form>
   </div>
-  <script>
-    fetch('Navigationbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
-        });
-</script>
 </body>
 </html>

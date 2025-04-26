@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./Css/footer.css">
 
     <script src="../dynamic/footer.js" defer></script>
+    <script src="../dynamic/addbook.js" defer></script>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -38,6 +40,9 @@
                 <h2>Add a New Book</h2>
                 <div class="add-book-form">
                     <form>
+                        <label for="coverImage">Book Cover Image:</label>
+                        <input type="file" id="coverImage" name="coverImage" accept="image/*" required>
+
                         <label for="bookID">Book ID:</label>
                         <input type="text" id="bookID" name="bookID" required>
                         

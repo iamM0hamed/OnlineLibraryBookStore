@@ -11,40 +11,31 @@
     <link rel="stylesheet" href="Css/Sign_style.css">
 
     <script src="../dynamic/footer.js" defer></script>
+    <script src="../dynamic/displayBookAdmin.js" defer></script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-               <li>
-                  <a href="dashboard.html"><i class="fas fa-home"></i>Home</a>
-               </li>
-               <li>
-                  <a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a>
-               </li>
-               <li>
-                  <a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a>
-               </li>
-               <li>
-                  <a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a>
-               </li>
-               <li>
-                  <a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a>
-               </li>
-            </ul>
-            <div class="search-box">
-               <input type="text" placeholder="Search about Book..." />
-               <button><i class="fas fa-search"></i></button>
-            </div>
-         </div>
-      </nav>
+   <nav class="navbar">
+      <div class="nav-container">
+          <ul class="nav-links">
+              <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
+              <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>log out</a></li>
+              <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
+              <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
+              <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+          </ul>
+          <div class="search-box">
+              <input type="text" placeholder="Search about Book...">
+              <button><i class="fas fa-search"></i></button>
+          </div>
+      </div>
+  </nav>
       <!-- Add Book Button -->
       <section class="action-section" class="admin-link">
-         <a href="addBook.html" class="buttonlink">Add New Book</a>
+         <a href="addBook.html" class="addbook">Add New Book</a>
       </section>
 
       <!-- Main Content -->
@@ -53,98 +44,6 @@
          <section class="book-section">
             <h2>Available Books</h2>
             <div class="book-grid">
-               <!-- Book 1 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book1.jpg" alt="Book 1 Cover" />
-                  <h3>The Shining</h3>
-                  <p>Author: Stephen King</p>
-                  <p>Genre: Horror</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
-
-               <!-- Book 2 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book2.jpg" alt="Book 2 Cover" />
-                  <h3>The Hitchhiker's Guide to the Galaxy</h3>
-                  <p>Author: Douglas Adams</p>
-                  <p>Genre: Science Fiction</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
-
-               <!-- Book 3 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book3.jpg" alt="Book 3 Cover" />
-                  <h3>Dune</h3>
-                  <p>Author: Frank Herbert</p>
-                  <p>Genre: Science Fiction</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
-
-               <!-- Book 4 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book4.jpg" alt="Book 4 Cover" />
-                  <h3>The Chronicles of Narnia</h3>
-                  <p>Author: C.S. Lewis</p>
-                  <p>Genre: Fantasy</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
-
-               <!-- Book 5 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book5.jpg" alt="Book 5 Cover" />
-                  <h3>The Da Vinci Code</h3>
-                  <p>Author: Dan Brown</p>
-                  <p>Genre: Mystery Thriller</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
-
-               <!-- Book 6 -->
-               <div class="book-card" onclick="window.location.href = 'BookDescription.html' ;" style="cursor: pointer">
-                  <img src="book6.jpg" alt="Book 6 Cover" />
-                  <h3>The Great Gatsby</h3>
-                  <p>Author: F. Scott Fitzgerald</p>
-                  <p>Genre: Classic</p>
-                  <div class="book-actions">
-                     <a href="BookDescription.html">View Details</a> |
-                     <a href="editBook.html" onclick="event.stopPropagation();">Edit</a>
-                  </div>
-               </div>
-
-              <!-- Book 7 -->
-              <div class="book-card">
-                 <img src="book7.jpg" alt="Book 7 Cover" />
-                 <h3>To Kill a Mockingbird</h3>
-                 <p>Author: Harper Lee</p>
-                 <p>Genre: Classic</p>
-                 <a href="BookDescription.html">View Details</a> |
-                 <a href="borrow.html">Borrow</a>
-              </div>
-
-
-              <!-- Book 8 -->
-              <div class="book-card">
-                 <img src="book8.jpg" alt="Book 8 Cover" />
-                 <h3>The Hunger Games</h3>
-                 <p>Author: Suzanne Collins</p>
-                 <p>Genre: Young Adult Dystopian</p>
-                 <a href="BookDescription.html">View Details</a> |
-                 <a href="borrow.html">Borrow</a>
-              </div>
            </div>
         </section>
      </div>
