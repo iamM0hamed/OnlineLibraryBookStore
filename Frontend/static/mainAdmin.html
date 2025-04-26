@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    
+
     <link rel="stylesheet" href="Css/dashboard.css">
     <link rel="stylesheet" href="Css/Nav.css">
     <link rel="stylesheet" href="Css/footer.css">
     <link rel="stylesheet" href="Css/Sign_style.css">
-
+    
     <script src="../dynamic/footer.js" defer></script>
     <script src="../dynamic/displayBookAdmin.js" defer></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-   <nav class="navbar">
-      <div class="nav-container">
-          <ul class="nav-links">
-              <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
-              <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>log out</a></li>
-              <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
-              <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
-              <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
-          </ul>
-          <div class="search-box">
-              <input type="text" placeholder="Search about Book...">
-              <button><i class="fas fa-search"></i></button>
-          </div>
-      </div>
-  </nav>
-      <!-- Add Book Button -->
-      <section class="action-section" class="admin-link">
-         <a href="addBook.html" class="addbook">Add New Book</a>
-      </section>
+    <script src="../dynamic/dashboard.js" defer></script>
 
-      <!-- Main Content -->
-      <div class="main-content">
-         <!-- Book Listing Section -->
-         <section class="book-section">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>log out</a></li>
+                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
+                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
+                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search about Book...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </nav>
+    <!-- Add Book Button -->
+    <section class="action-section" class="admin-link">
+        <a href="addBook.html" class="addbook">Add New Book</a>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Book Listing Section -->
+        <section class="book-section">
             <h2>Available Books</h2>
             <div class="book-grid">
-           </div>
+            </div>
         </section>
-     </div>
+    </div>
     <!-- Add the Footer Using JavaScript -->
     <div id="footer-placeholder"></div>
 </body>
+
 </html>

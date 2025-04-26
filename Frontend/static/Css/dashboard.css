@@ -158,7 +158,7 @@ input[type="checkbox"]:checked + .favorite-btn i {
 .favorite-counter {
    position: absolute;
    top: 40px;
-   right: 18px;
+   right: 21px;
    z-index: 1000;
 }
 
@@ -174,7 +174,7 @@ input[type="checkbox"]:checked + .favorite-btn i {
    border: none;
    border-radius: 3px;
    margin-top: 20px;
-   padding: 8px 16px; /* Adds spacing inside the button */
+   padding: 8px 10px; /* Adds spacing inside the button */
    width: fit-content; /* Ensures the button only takes up as much space as needed */
    justify-content: center;
    align-items: center;
@@ -183,6 +183,7 @@ input[type="checkbox"]:checked + .favorite-btn i {
    font-size: 1em; /* Slightly larger text */
    font-weight: bold;
    transition: transform 0.2s, background-color 0.3s;
+   margin-left: 10px;
 }
 
 .addbook:hover {
