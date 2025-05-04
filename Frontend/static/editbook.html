@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./Css/Nav.css">
     <link rel="stylesheet" href="./Css/add-book.css">
     <link rel="stylesheet" href="./Css/footer.css">
+    <script src="../dynamic/editbook.js" defer></script>
 
     <script src="../dynamic/footer.js" defer></script>
 
@@ -35,26 +36,7 @@
         <section id="add-book">
             <div class="add-book-container">
                 <h2>Edit a Book</h2>
-                <div class="add-book-form">
-                    <form>
-                        <label for="bookID">Book ID:</label>
-                        <input type="text" id="bookID" name="bookID" required>
-                        
-                        <label for="title">Book Name:</label>
-                        <input type="text" id="title" name="title" required>
-                        
-                        <label for="author">Author:</label>
-                        <input type="text" id="author" name="author" required>
-                        
-                        <label for="category">Category:</label>
-                        <input type="text" id="category" name="category" required>
-                        
-                        <label for="description">Description:</label>
-                        <textarea id="description" name="description" required></textarea>
-                        
-                        <button class="buttonlink" type="submit">Edit Book</button>
-                    </form>
-                </div>
+                <div class="add-book-form" id="editBookContainer">
             </div>
         </section>
     </main>

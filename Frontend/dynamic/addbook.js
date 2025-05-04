@@ -1,8 +1,10 @@
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form from submitting traditionally
 
+    // Generate a random unique bookID
+    const bookID = `book_${Date.now()}_${Math.floor(Math.random() * 100000)}`;
+
     // Get input values
-    const bookID = document.getElementById('bookID').value;
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const category = document.getElementById('category').value;
@@ -14,7 +16,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
         reader.onload = function(event) {
             const bookCoverURL = event.target.result; // Base64 image string
 
-            // Create book object
+            // Create book object with random ID
             const newBook = {
                 bookID,
                 title,
