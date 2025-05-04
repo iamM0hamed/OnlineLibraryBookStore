@@ -1,7 +1,6 @@
 // Get the book ID from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const bookID = urlParams.get('bookID');
-console.log(bookID)
 
 // Retrieve the books array from localStorage
 const books = JSON.parse(localStorage.getItem('books')) || [];
