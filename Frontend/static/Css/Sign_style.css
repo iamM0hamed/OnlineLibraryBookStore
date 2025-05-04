@@ -4,28 +4,21 @@
     box-sizing: border-box;
 }
 
-/* Your existing styles can follow */
-.video-background {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-
+/* Video background setup */
 .video-background {
     position: fixed;
-    top: 10;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 0; /* Use a positive z-index */
+    z-index: 0;
 }
 
 .video-background video {
-    width: 100%; /* Set width to 100% */
-    height: 100%; /* Set height to 100% */
-    object-fit: cover; /* Ensure the video covers the area */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -38,148 +31,126 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for opacity */
-    z-index: 1; /* Bring overlay above the video */
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
+
 h1 {
     text-align: center;
-    margin-bottom: 20px; /* Add some space below the heading */
+    margin-bottom: 20px;
     font-family: sans-serif;
+    color: white;
 }
 
 
 .form-container {
-    margin-top: 100px;
-    position: relative; /* Position relative to the video background */
-    z-index: 1; /* Ensure it is above the video and overlay */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center items horizontally */
-    color: white; /* Text color */
-    flex-wrap: wrap;
-
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 100%;
+    max-width: 450px;
 }
 
-
 .form-group {
-    display: flex; /* Use flexbox to align items horizontally */
-    flex-direction: row; /* Stack labels and inputs vertically */
-    align-items: center; /* Center items horizontally */
-    margin: 10px 0; /* Add some margin for spacing */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
     flex-wrap: wrap;
-    width: 450px;
-    justify-content: start;
+    width: 100%;
+    justify-content: center;
 }
 
 .input-group {
     display: flex;
-    flex-direction: column; /* Stack label above input */
-    margin: 0 10px; /* Add horizontal spacing between input groups */
+    flex-direction: column;
+    margin: 0 10px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
-
 input {
-    padding: 5px;
+    padding: 5px 15px;
     border: none;
     border-radius: 25px;
-    width: 90%;
-    margin: 10px;
+    width: 100%;
+    margin: 10px 0;
     height: 35px;
 }
 
-.form-container .buttonlink{
-    display: flex;
+.buttonlink {
+    display: inline-block;
     background-color: #c7a71a;
-    color: #fff3bd;
+    color: #ffffff;
+    font-size: 15px;
     border: none;
-    border-radius: 3px;
+    border-radius: 15px;
+    padding: 5px 10px;
     margin-top: 20px;
     width: 100px;
-    height: 25px;
-    
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.form-container .buttonlink:hover {
-
-    background-color: #897001; /* Darker blue on hover */
+.buttonlink:hover {
+    background-color: #897001;
     transform: scale(1.05);
-
 }
 
 .submit-group {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%; /* Use full width to center the button */
-
-    justify-content: center; /* Center the button */
-}
-
-.form-container .submit-group {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    width: 92%; /* Use full width to center the button */
-
-    justify-content: center; /* Center the button */
+    width: 100%;
+    margin-top: 10px;
 }
 
-
-
-a{
+a {
     color: white;
     margin-top: 10px;
     text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
 }
 
-a:hover{
-    color:rgb(244, 207, 138);
+a:hover {
+    color: rgb(244, 207, 138);
     transform: scale(1.05);
 }
 
-
-.full-width{
-    flex-basis:93%;
+.full-width {
+    flex-basis: 100%;
 }
 
-.email{
-    width:100%;
+.email {
+    width: 100%;
     box-sizing: border-box;
 }
-
-
-.form-group.buttonlink {
-    display: flex; /* Use flexbox to align items horizontally */
-    flex-direction: column; /* Stack labels and inputs vertically */
-    align-items: center; /* Center items horizontally */
-    margin: 10px 0; /* Add some margin for spacing */
-    flex-wrap: wrap;
-    width: 450px;
-}
-
-
 
 /* Style the buttons */
 .newbutton {
     display: inline-block;
-    background-color: #c7a71a; /* Button background color */
-    color: white; /* Text color */
+    background-color: #c7a71a;
+    color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 1.2em; /* Adjust text size */
-    font-weight: bold; /* Make text bold */
-    padding: 10px 20px; /* Add spacing inside the button */
-    border-radius: 8px; /* Rounded corners */
-    margin: 10px; /* Space between buttons */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, background-color 0.3s ease-in-out;
 }
 
-/* Hover effect */
 .newbutton:hover {
-    background-color: #b99b16; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight lift */
+    background-color: #b99b16;
+    transform: scale(1.05);
 }
