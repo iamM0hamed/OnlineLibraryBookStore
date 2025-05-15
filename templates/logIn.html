@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Sign-in</title>
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Css/Sign_style.css">
-    <script src="../dynamic/signIn.js" defer></script>
-    <script src="../dynamic/nav.js" defer></script>
+    
+    <!-- Updated CSS Link -->
+    <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
+    
+    <!-- Updated JavaScript Links -->
+    <script src="{% static 'JS/signIn.js' %}" defer></script>
 </head>
+
 <body>
-  <div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder">
+        {% include 'Navigationbar.html' %}
+    </div>
 
-  <div class="video-background">
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-  </div>
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
   
-  <div class="form-container">
-    <form class="flex-form" action="index.html">
-      <h1>Welcome to Our Library <br> Let's Creat an account</h1>
-      <div class="form-group">
-        <div class="input-group">
-          <input type="text" id="Fname" name="Fname" required placeholder="First name">
-        </div>
-
-        <div class="input-group">
-          <input type="text" id="Lname" name="Lname" required placeholder="Last name">
-        </div>
-
-        <div class="input-group full-width">
-          <input type="email" id="email" name="email" required placeholder="E-mail">
-        </div>
-
-        <div class="input-group">
-          <input type="password" id="password" name="password" required placeholder="Password">
-        </div>
-
-        <div class="input-group">
-          <input type="password" id="pass" name="pass" required placeholder="Confirm Password">
-        </div>
-        <div class="input-group">
-          <input type="checkbox" id="admin-checkbox" name="admin-checkbox"> Admin Account
-        </div>
+    <div class="form-container">
+        <form class="flex-form" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <h1>Welcome Back <br> Please Log In</h1>
         
-        <div class="input-group" id="secret-key-group" style="display: none;">
-          <input type="password" id="secret-key" name="secret-key" placeholder="Enter Secret Key">
-        </div>
-      </div>
-      <div id="error-message" style="color: red; font-weight: bold; display: none;"></div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder="E-mail">
+                </div>
 
-      <div class="submit-group">
-        <input class="buttonlink" type="submit" value="Submit">
-      </div>
-    </form>
-  </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                </div>
+            </div>
+
+            <div id="error-message" style="color: red; font-weight: bold;">
+                {% if error %} {{ error }} {% endif %}
+            </div>
+            <div class="forgot-password">
+                <a href="{% url 'forget-password' %}">Forgot Password?</a>
+            </div>
+            <div class="submit-group">
+                <input class="buttonlink" type="submit" value="Log In">
+            </div>
+        </form>
+    </div>
 </body>
 </html>

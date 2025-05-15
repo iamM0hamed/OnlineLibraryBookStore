@@ -1,38 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sign-in</title>
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Css/Sign_style.css">
+    <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
 </head>
 <body>
-    <div id="navbar-placeholder"></div>
-  <div class="video-background">
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-  
-  <div class="form-container">
-    <form class="flex-form" action="dashboard.html">
-      <h1>Welcome to Our Library <br>
-        <div class="button-container">
-          <a href="sign-up.html" class="newbutton"><i class="fas fa-user-plus"></i> Sign Up</a>
-          <a href="logIn.html" class="newbutton"><i class="fas fa-sign-in-alt"></i> Log In</a>
-      </div>      
+    <div id="navbar-placeholder">
+        {% include 'Navigationbar.html' %}
+    </div>
 
-      </div>
-    </form>
-  </div>
-      <script>
-    fetch('Navigationbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
-        });
-</script>
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="https://videos.pexels.com/video-files/854533/854533-uhd_2560_1440_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+  
+    <div class="form-container">
+        <form class="flex-form" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <h1>Welcome to Our Library</h1>
+
+            <div class="button-container">
+                <a href="{% url 'signup' %}" class="newbutton"><i class="fas fa-user-plus"></i> Sign Up</a>
+                <a href="{% url 'login' %}" class="newbutton"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

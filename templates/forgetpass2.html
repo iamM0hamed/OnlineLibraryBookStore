@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>forgetpass2</title>
-    <link rel="stylesheet" href="Css/Sign_style.css">
+    <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
 </head>
+
 <body>
     
     <!-- here we need to check if the user enter 6 characters i asked ai he tell me with javaScript  -->
     <div class="form-container">
-        <form class="content" action="setNewPass.html">
-            <h1>We send Code of 8 characters to your mail</h1>
-            <input type="text" id="username" name="codeOF6" placeholder="Enter the code" required><br>
+        <form class="content" method="POST" action="{% url 'forgetpass2' %}">
+            {% csrf_token %}
+            <h1>We sent a code of 8 characters to your email</h1>
+            <input type="text" id="username" name="codeOF6" placeholder="Enter the code" required>
             
             <div class="submit-group">
                 <input class="buttonlink" type="submit" value="Next">
             </div>
-
         </form>
+
     </div>
 
     <div class="video-background">

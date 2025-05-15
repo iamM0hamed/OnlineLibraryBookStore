@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Forget Password</title>
-    <link rel="stylesheet" href="Css/Sign_style.css">
+    <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
 </head>
+
 <body>
     <!-- Here We need to check the user input is email
     but without input submit  -->
 
     <div class="form-container">
-        <form class="forget1" action="forgetpass2.html">
-
-            <h1>Forget Password ? <br>Follow this steps to set a new Password</h1>
+        <form class="forget1" method="POST" action="{% url 'forget-password' %}">
+            {% csrf_token %}
+            <h1>Forget Password? <br>Follow these steps to set a new password</h1>
             <input type="email" id="username" name="email" placeholder="Enter Your E-mail" required>
             <br><br>
-            
+
             <div class="submit-group">
                 <input class="buttonlink" type="submit" value="Next">
             </div>
         </form>
+
     </div>
 
     <div class="video-background">
