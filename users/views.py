@@ -47,7 +47,6 @@ def signup(request):
             return redirect('mainadmin')  # Redirect admin to main dashboard
         else:
             return redirect('dashboard')  # Redirect normal user
-
     return render(request, 'sign-up.html')
 
 
@@ -95,7 +94,7 @@ def forgetPassword(request):
             fail_silently=False,
         )
 
-        return redirect('forgetpass2')  # Move to next step
+        return redirect('forgetpass2')
 
     return render(request, 'forgetpass1.html')
 
@@ -107,7 +106,7 @@ def verifyResetCode(request):
         if entered_code != stored_code:
             return render(request, 'forgetpass2.html', {'error': 'Invalid reset code!'})
 
-        return redirect('setNewPass')  # Proceed to set a new password
+        return redirect('setNewPass')
 
     return render(request, 'forgetpass2.html')
 
