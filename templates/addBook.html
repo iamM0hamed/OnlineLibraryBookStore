@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">    
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
-    <link rel="stylesheet" href="./Css/Nav.css">
-    <link rel="stylesheet" href="./Css/add-book.css">
-    <link rel="stylesheet" href="./Css/footer.css">
+    <link rel="stylesheet" href="{% static './Css/Nav.css' %}">
+    <link rel="stylesheet" href="{% static './Css/add-book.css' %}">
+    <link rel="stylesheet" href="{% static './Css/footer.css' %}">
 
-    <script src="../dynamic/footer.js" defer></script>
-    <script src="../dynamic/addbook.js" defer></script>
+    <script src="{% static '../dynamic/footer.js' %}" defer></script>
+    <script src="{% static '../dynamic/addbook.js' %}" defer></script>
     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
