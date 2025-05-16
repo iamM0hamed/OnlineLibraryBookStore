@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Description</title>
-  <link rel="stylesheet" href="./Css/bookdes.css"/>
-  <link rel="stylesheet" href="./Css/Nav.css"/>
-  <link rel="stylesheet" href="./Css/footer.css"/>
+  <link rel="stylesheet" href="{% static './Css/bookdes.css' %}"/>
+  <link rel="stylesheet" href="{% static './Css/Nav.css' %}"/>
+  <link rel="stylesheet" href="{% static './Css/footer.css' %}"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <script src="../dynamic/footer.js" defer></script>
-  <script src="../dynamic/detailes.js" defer></script>
+  <script src="{% static '../dynamic/footer.js' %}" defer></script>
+  <script src="{% static '../dynamic/detailes.js' %}" defer></script>
 
 </head>
 <body>
