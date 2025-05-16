@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static './Css/footer.css' %}">
 
     <script src="{% static '../dynamic/footer.js' %}" defer></script>
-    <script src="{% static '../dynamic/addbook.js' %}" defer></script>
+    <!-- <script src="{% static '../dynamic/addbook.js' %}" defer></script> -->
     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,25 +39,20 @@
         <section id="add-book">
             <div class="add-book-container">
                 <h2>Add a New Book</h2>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li class="alert alert-success">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 <div class="add-book-form">
-                    <form>
-                        <label for="coverImage">Book Cover Image:</label>
-                        <input type="file" id="coverImage" name="coverImage" accept="image/*" required>
-                        
-                        <label for="title">Book Name:</label>
-                        <input type="text" id="title" name="title" required>
-                        
-                        <label for="author">Author:</label>
-                        <input type="text" id="author" name="author" required>
-                        
-                        <label for="category">Category:</label>
-                        <input type="text" id="category" name="category" required>
-                        
-                        <label for="description">Description:</label>
-                        <textarea id="description" name="description" required></textarea>
-                        
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
                         <button type="submit">Add Book</button>
                     </form>
+
                 </div>
             </div>
         </section>
