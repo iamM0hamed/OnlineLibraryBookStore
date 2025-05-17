@@ -1,61 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">  
-    {% load static %}  
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Book</title>
-    <link rel="stylesheet" href="{% static './Css/Nav.css' %}">
-    <link rel="stylesheet" href="{% static './Css/add-book.css' %}">
-    <link rel="stylesheet" href="{% static './Css/footer.css' %}">
-    <!-- <script src="{% static '../dynamic/editbook.js' %}" defer></script> -->
+{% extends "base.html" %}
+{% load static %}
 
-    <script src="{% static '../dynamic/footer.js' %}" defer></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
-                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
-                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
-                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
-            </ul>
-            <div class="search-box">
-                <input type="text" placeholder="Search about Book...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
-        </div>
-    </nav>
+{% block content %}
+<div class="edit-book-section">
+    <h2>Edit Book</h2>
+    
+    <form method="POST" enctype="multipart/form-data" class="book-form">
+        {% csrf_token %}
         
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li class="{{ message.tags }}">{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-
-        <main class="content"></main>
-        <!-- Add Book Form -->
-        <section id="add-book">
-            <div class="add-book-container">
-                <h2>Edit a Book</h2>
-                <div class="add-book-form" id="editBookContainer">
-                    <form method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit">Save Changes</button>
-                    </form>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
                 </div>
-        </section>
-    </main>
-        <!-- Add the Footer Using JavaScript -->
-        <div id="footer-placeholder"></div>>
-</body>
-</html>
+            {% endfor %}
+        {% endif %}
+
+        {{ form.as_p }}
+        
+        <div class="form-actions">
+            <button type="submit" class="submit-btn">Save Changes</button>
+            <a href="{% url 'admin_dashboard' %}" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+    }
+
+    main {
+        position: relative;
+        z-index: 1;
+        padding-top: 70px;
+    }
+
+    .edit-book-section {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .book-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .book-form p {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .book-form label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .book-form input,
+    .book-form textarea,
+    .book-form select {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .book-form textarea {
+        min-height: 100px;
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+
+    .submit-btn,
+    .cancel-btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .submit-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .cancel-btn {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .cancel-btn:hover {
+        background-color: #5a6268;
+    }
+
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+
+    .alert-error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+</style>
+{% endblock %}

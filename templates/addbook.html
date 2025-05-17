@@ -1,7 +1,7 @@
-{% extends "pages/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
-{% block page_content %}
+{% block content %}
 <div class="add-book-section">
     <h2>Add New Book</h2>
     
@@ -39,9 +39,22 @@
 {% block extra_css %}
 {{ block.super }}
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+    }
+
+    main {
+        position: relative;
+        z-index: 1;
+        padding-top: 70px; /* Adjust this value based on your navbar height */
+    }
+
     .add-book-section {
         max-width: 800px;
-        margin: 40px auto;
+        margin: 20px auto;
         padding: 20px;
         background: white;
         border-radius: 10px;

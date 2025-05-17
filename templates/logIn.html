@@ -8,9 +8,65 @@
     
     <!-- Updated CSS Link -->
     <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
-    
-    <!-- Updated JavaScript Links -->
-    <script src="{% static 'JS/signIn.js' %}" defer></script>
+    <style>
+        .error-message {
+            background-color: rgba(255, 0, 0, 0.1);
+            color: #ff3333;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #ff3333;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .error-message i {
+            margin-right: 8px;
+            color: #ff3333;
+            font-size: 1.1rem;
+        }
+
+        .error-message span {
+            flex: 1;
+        }
+
+        /* Animation classes */
+        .error-message {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Improve input field feedback */
+        .input-group input:invalid:focus {
+            border-color: #ff3333;
+            box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.2);
+        }
+
+        /* Add shake animation for invalid input */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .error-shake {
+            animation: shake 0.4s ease-in-out;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,28 +83,44 @@
     </div>
   
     <div class="form-container">
+        {% if messages %}
+            <div class="messages-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <form class="flex-form" method="POST" action="{% url 'login' %}">
             {% csrf_token %}
             <h1>Welcome Back <br> Please Log In</h1>
         
+            <!-- Display Django error message -->
+            {% if error %}
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>{{ error }}</span>
+            </div>
+            {% endif %}
+            
             <div class="form-group">
                 <div class="input-group">
-                    <input type="email" id="email" name="email" required placeholder="E-mail">
+                    <input type="email" id="email" name="email" required placeholder="E-mail"
+                           value="{{ form_data.email|default:'' }}">
                 </div>
 
                 <div class="input-group">
                     <input type="password" id="password" name="password" required placeholder="Password">
                 </div>
             </div>
-
-            <div id="error-message" style="color: red; font-weight: bold;">
-                {% if error %} {{ error }} {% endif %}
-            </div>
+            
             <div class="forgot-password">
                 <a href="{% url 'forget-password' %}">Forgot Password?</a>
             </div>
             <div class="submit-group">
-                <input class="buttonlink" type="submit" value="Log In">
+                <button type="submit" class="buttonlink">Log In</button>
             </div>
         </form>
     </div>

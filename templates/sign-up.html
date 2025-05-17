@@ -3,14 +3,99 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>Sign-in</title>
+    <title>Sign-up</title>
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
     
     <!-- Updated CSS Link -->
     <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
-    
-    <!-- Updated JS Scripts -->
-    <script src="{% static 'JS/signIn.js' %}" defer></script>
+    <style>
+        .error-message {
+            background-color: rgba(255, 0, 0, 0.1);
+            color: #ff3333;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #ff3333;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .error-message i {
+            margin-right: 8px;
+            color: #ff3333;
+            font-size: 1.1rem;
+        }
+
+        .error-message span {
+            flex: 1;
+        }
+
+        /* Animation classes */
+        .error-message {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Improve input field feedback */
+        .input-group input:invalid:focus {
+            border-color: #ff3333;
+            box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.2);
+        }
+
+        /* Add shake animation for invalid input */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .error-shake {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        /* Disable button styles */
+        .buttonlink:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Loading spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-left: 8px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        #error-container {
+            margin: 10px 0;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
   <div id="navbar-placeholder">
@@ -26,21 +111,42 @@
   </div>
   
   <div class="form-container">
-    <form class="flex-form" method="POST" action="{% url 'signup' %}">
+    {% if messages %}
+        <div class="messages-container">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form class="flex-form" method="POST" action="{% url 'signup' %}" id="signupForm">
       {% csrf_token %}
       <h1>Welcome to Our Library <br> Let's Create an account</h1>
       
+      <!-- Display Django error message -->
+      {% if error %}
+      <div class="error-message">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>{{ error }}</span>
+      </div>
+      {% endif %}
+
       <div class="form-group">
         <div class="input-group">
-          <input type="text" id="Fname" name="Fname" required placeholder="First name">
+          <input type="text" id="Fname" name="Fname" required placeholder="First name" 
+                 value="{{ form_data.first_name|default:'' }}">
         </div>
 
         <div class="input-group">
-          <input type="text" id="Lname" name="Lname" required placeholder="Last name">
+          <input type="text" id="Lname" name="Lname" required placeholder="Last name"
+                 value="{{ form_data.last_name|default:'' }}">
         </div>
 
         <div class="input-group full-width">
-          <input type="email" id="email" name="email" required placeholder="E-mail">
+          <input type="email" id="email" name="email" required placeholder="E-mail"
+                 value="{{ form_data.email|default:'' }}">
         </div>
 
         <div class="input-group">
@@ -52,23 +158,39 @@
         </div>
 
         <div class="input-group">
-          <input type="checkbox" id="admin-checkbox" name="admin-checkbox"> Admin Account
+          <input type="checkbox" id="admin-checkbox" name="admin-checkbox" {% if form_data.is_admin %}checked{% endif %}> 
+          <label for="admin-checkbox">Admin Account</label>
         </div>
         
-        <div class="input-group" id="secret-key-group" style="display: none;">
+        <div class="input-group" id="secret-key-group" style="display: {% if form_data.is_admin %}block{% else %}none{% endif %};">
           <input type="password" id="secret-key" name="secret-key" placeholder="Enter Secret Key">
         </div>
       </div>
 
-      <!-- Error message from Django backend -->
-      <div id="error-message" style="color: red; font-weight: bold;">
-        {% if error %} {{ error }} {% endif %}
-      </div>
-
       <div class="submit-group">
-        <input class="buttonlink" type="submit" value="Submit">
+        <button type="submit" class="buttonlink">Submit</button>
       </div>
     </form>
   </div>
+
+  <!-- Debug console -->
+  <script>
+      console.log('Page loaded');
+      window.DEBUG = true;
+  </script>
+  
+  <!-- Simple admin checkbox toggle script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const adminCheckbox = document.getElementById('admin-checkbox');
+      const secretKeyGroup = document.getElementById('secret-key-group');
+      
+      if (adminCheckbox && secretKeyGroup) {
+        adminCheckbox.addEventListener('change', function() {
+          secretKeyGroup.style.display = this.checked ? 'block' : 'none';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
