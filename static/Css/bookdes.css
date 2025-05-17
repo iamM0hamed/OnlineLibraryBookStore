@@ -7,78 +7,139 @@ body {
 }
 
 .book-details-container {
-   display: flex;
-   flex-direction: column; /* For mobile responsiveness */
-   align-items: center;
-   margin: 100px auto;
+   max-width: 1200px;
+   margin: 40px auto;
    padding: 20px;
-   max-width: 800px;
-   background-color: #f9f9f9; /* Soft background for contrast */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-   border-radius: 10px; /* Rounded edges for a modern look */
-   font-family: "Arial", sans-serif;
+   display: flex;
+   gap: 40px;
+   background-color: #fff;
+   border-radius: 10px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Book cover image styling */
-.book-cover img {
+.book-image {
+   flex: 0 0 300px;
+}
+
+.book-image img {
+   width: 100%;
+   height: auto;
    border-radius: 5px;
-   margin-bottom: 10px;
-   object-fit: cover;
-   height: 200px;
-   width: 150px;
-   margin: 0 auto;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Book info styling */
 .book-info {
-   text-align: center;
-   margin-top: 20px;
-   padding: 10px;
+   flex: 1;
 }
 
-.book-title {
-   font-size: 2rem;
-   font-weight: bold;
-   margin-bottom: 10px;
-   color: #333; /* Darker text for better readability */
+.book-info h1 {
+   margin: 0 0 10px 0;
+   color: #333;
+   font-size: 2.5em;
 }
 
-.book-author {
-   font-size: 1.5rem;
-   font-weight: 500;
+.author {
+   color: #666;
+   font-size: 1.2em;
    margin-bottom: 15px;
+}
+
+.category {
+   color: #888;
+   font-size: 1.1em;
+   margin-bottom: 20px;
+}
+
+.description {
+   margin: 20px 0;
+}
+
+.description h2 {
+   color: #444;
+   margin-bottom: 10px;
+}
+
+.description p {
+   line-height: 1.6;
    color: #555;
 }
 
-.book-category,
-.book-description {
-   font-size: 1.1rem;
-   margin-bottom: 15px;
+.book-status {
+   margin: 20px 0;
+   padding: 15px;
+   background-color: #f8f9fa;
+   border-radius: 5px;
+}
+
+.availability {
+   font-size: 1.1em;
+   margin-bottom: 10px;
+}
+
+.available {
+   color: #28a745;
+   font-weight: bold;
+}
+
+.borrowed {
+   color: #dc3545;
+   font-weight: bold;
+}
+
+.likes {
    color: #666;
-   line-height: 1.6;
+   font-size: 1.1em;
 }
 
-/* Style the buttons */
-.borrow-button {
-   display: inline-block;
-   background-color: #c7a71a; /* Button background color */
-   color: white; /* Text color */
-   text-align: center;
+.likes i {
+   color: #dc3545;
+   margin-right: 5px;
+}
+
+.actions {
+   margin-top: 30px;
+   display: flex;
+   gap: 15px;
+}
+
+.borrow-btn, .like-btn {
+   padding: 12px 25px;
+   border: none;
+   border-radius: 5px;
+   font-size: 1.1em;
+   cursor: pointer;
    text-decoration: none;
-   font-size: 1.2em; /* Adjust text size */
-   font-weight: bold; /* Make text bold */
-   padding: 10px 20px; /* Add spacing inside the button */
-   border-radius: 8px; /* Rounded corners */
-   margin: 10px; /* Space between buttons */
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-   transition: transform 0.2s, background-color 0.3s ease-in-out;
+   transition: background-color 0.3s;
 }
 
-/* Hover effect */
-.borrow-button:hover {
-   background-color: #b99b16; /* Darker shade on hover */
-   transform: scale(1.05); /* Slight lift */
+.borrow-btn {
+   background-color: #007bff;
+   color: white;
+}
+
+.borrow-btn:hover {
+   background-color: #0056b3;
+}
+
+.like-btn {
+   background-color: #dc3545;
+   color: white;
+}
+
+.like-btn:hover {
+   background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+   .book-details-container {
+      flex-direction: column;
+   }
+
+   .book-image {
+      flex: 0 0 auto;
+      max-width: 250px;
+      margin: 0 auto;
+   }
 }
 
 #footer-placeholder {

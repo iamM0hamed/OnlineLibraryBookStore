@@ -1,17 +1,27 @@
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login as auth_login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 import random
 import string
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
-
+from django.contrib import messages
+from books.models import Book
 
 def index(request):
+    if request.user.is_authenticated:
+        if request.user.is_staff:
+            return redirect('admin_dashboard')
+        return redirect('dashboard')
     return render(request, 'index.html')
 
 def signup(request):
+    if request.user.is_authenticated:
+        if request.user.is_staff:
+            return redirect('admin_dashboard')
+        return redirect('dashboard')
+
     if request.method == 'POST':
         first_name = request.POST.get('Fname')
         last_name = request.POST.get('Lname')
@@ -21,13 +31,15 @@ def signup(request):
 
         # Check if user already exists
         if User.objects.filter(username=email).exists():
-            return render(request, 'sign-up.html', {'error': 'User already exists!'})
+            messages.error(request, 'User already exists!')
+            return render(request, 'sign-up.html')
 
         # Determine user type
         if is_admin:
             secret_key = request.POST.get('secret-key')
             if secret_key.lower() != 'say my name':  # Validate admin secret key
-                return render(request, 'sign-up.html', {'error': 'Invalid secret key for admin account!'})
+                messages.error(request, 'Invalid secret key for admin account!')
+                return render(request, 'sign-up.html')
 
             # Create superuser (Full Admin Access)
             user = User.objects.create_superuser(username=email, email=email, password=password)
@@ -40,17 +52,22 @@ def signup(request):
         user.save()
 
         # Log the user in after registration
-        login(request, user)
+        auth_login(request, user)
 
+        messages.success(request, 'Account created successfully!')
         # Redirect based on role
         if is_admin:
-            return redirect('mainadmin')  # Redirect admin to main dashboard
+            return redirect('admin_dashboard')
         else:
-            return redirect('dashboard')  # Redirect normal user
+            return redirect('dashboard')
     return render(request, 'sign-up.html')
 
+def user_login(request):
+    if request.user.is_authenticated:
+        if request.user.is_staff:
+            return redirect('admin_dashboard')
+        return redirect('dashboard')
 
-def login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -58,15 +75,27 @@ def login(request):
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
-            login(request, user)
-            if user.is_superuser:
-                return redirect('mainadmin')
+            auth_login(request, user)
+            messages.success(request, f'Welcome back, {user.first_name}!')
+            if user.is_staff:
+                return redirect('admin_dashboard')
             else:
                 return redirect('dashboard')
         else:
-            return render(request, 'logIn.html', {'error': 'Invalid email or password'})
+            messages.error(request, 'Invalid email or password')
+            return render(request, 'logIn.html')
 
     return render(request, 'logIn.html')
+
+@login_required
+def user_logout(request):
+    # Clear all session data
+    request.session.flush()
+    # Logout the user
+    logout(request)
+    messages.success(request, 'You have been logged out successfully.')
+    # Redirect to the index page
+    return redirect('index')
 
 def forgetPassword(request):
     if request.method == 'POST':
@@ -128,3 +157,58 @@ def setNewPassword(request):
         return redirect('signin')  # Redirect to login after reset
 
     return render(request, 'setNewPass.html')
+
+@login_required
+def profile(request):
+    """User profile view."""
+    # Get user's borrowed books
+    borrowed_books = Book.objects.filter(borrowed_by=request.user)
+    # Get user's favorite books
+    favorite_books = request.user.favorite_books.all()
+    
+    context = {
+        'user': request.user,
+        'borrowed_books': borrowed_books,
+        'favorite_books': favorite_books
+    }
+    
+    return render(request, 'ProfilePage.html', context)
+
+@login_required
+def edit_profile(request):
+    """Edit profile view."""
+    if request.method == 'POST':
+        # Get form data
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        current_password = request.POST.get('current_password')
+        new_password = request.POST.get('new_password')
+        
+        user = request.user
+        
+        # Update basic info
+        if first_name:
+            user.first_name = first_name
+        if last_name:
+            user.last_name = last_name
+        if email and email != user.email:
+            if User.objects.filter(email=email).exclude(id=user.id).exists():
+                messages.error(request, 'Email already exists!')
+            else:
+                user.email = email
+                user.username = email  # Since we use email as username
+        
+        # Update password if provided
+        if current_password and new_password:
+            if user.check_password(current_password):
+                user.set_password(new_password)
+                messages.success(request, 'Password updated successfully!')
+            else:
+                messages.error(request, 'Current password is incorrect!')
+        
+        user.save()
+        messages.success(request, 'Profile updated successfully!')
+        return redirect('profile')
+    
+    return render(request, 'edit_profile.html', {'user': request.user})

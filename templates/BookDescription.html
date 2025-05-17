@@ -2,34 +2,171 @@
 <html lang="en">
     {% load static %}
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book Description</title>
-  <link rel="stylesheet" href="{% static './Css/bookdes.css' %}"/>
-  <link rel="stylesheet" href="{% static './Css/Nav.css' %}"/>
-  <link rel="stylesheet" href="{% static './Css/footer.css' %}"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <script src="{% static '../dynamic/footer.js' %}" defer></script>
-  <script src="{% static '../dynamic/detailes.js' %}" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ book.title }} - Book Description</title>
+    <link rel="stylesheet" href="{% static './Css/bookdes.css' %}"/>
+    <link rel="stylesheet" href="{% static './Css/Nav.css' %}"/>
+    <link rel="stylesheet" href="{% static './Css/footer.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <style>
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
 
+        .borrow-btn, .like-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .borrow-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .borrow-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .like-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .like-btn:hover {
+            background-color: #c82333;
+        }
+
+        .like-btn.liked {
+            background-color: #28a745;
+        }
+
+        .like-btn.liked:hover {
+            background-color: #218838;
+        }
+
+        .borrowed-by-you, .borrowed-by-other {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .borrowed-by-you {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .borrowed-by-other {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .book-status {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .availability {
+            font-size: 16px;
+        }
+
+        .available {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .borrowed {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .likes {
+            font-size: 16px;
+            color: #dc3545;
+        }
+
+        .likes i {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>Log out</a></li>
-                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
-                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
-                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+                <li><a href="{% url 'dashboard' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                <li><a href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="{% url 'pages:contact' %}"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="{% url 'pages:about' %}"><i class="fas fa-info-circle"></i> About</a></li>
             </ul>
             <div class="search-box">
-                <input type="text" placeholder="Search about Book...">
+                <input type="text" placeholder="Search for books...">
                 <button><i class="fas fa-search"></i></button>
             </div>
         </div>
     </nav>
-    <div id="bookDetails"></div>
-  <div id="footer-placeholder"></div>
+
+    <div class="book-details-container">
+        <div class="book-image">
+            {% if book.cover_image %}
+                <img src="{{ book.cover_image.url }}" alt="{{ book.title }} cover">
+            {% else %}
+                <img src="{% static 'images/default-book-cover.jpg' %}" alt="Default book cover">
+            {% endif %}
+        </div>
+        <div class="book-info">
+            <h1>{{ book.title }}</h1>
+            <p class="author">By {{ book.author }}</p>
+            <p class="category">Category: {{ book.category }}</p>
+            <div class="description">
+                <h2>Description</h2>
+                <p>{{ book.description }}</p>
+            </div>
+            <div class="book-status">
+                <p class="availability">
+                    Status: 
+                    {% if book.available %}
+                        <span class="available">Available</span>
+                    {% else %}
+                        <span class="borrowed">Currently Borrowed</span>
+                    {% endif %}
+                </p>
+                <p class="likes"><i class="fas fa-heart"></i> {{ book.likes }} likes</p>
+            </div>
+            <div class="actions">
+                {% if book.available %}
+                    <form method="POST" action="{% url 'borrow_book_user' book.id %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="borrow-btn">Borrow Book</button>
+                    </form>
+                {% elif is_borrowed_by_user %}
+                    <span class="borrowed-by-you">Currently borrowed by you</span>
+                {% else %}
+                    <span class="borrowed-by-other">Currently borrowed by another user</span>
+                {% endif %}
+                
+                <form method="POST" action="{% url 'like_book' book.id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="like-btn {% if user in book.liked_by.all %}liked{% endif %}">
+                        <i class="{% if user in book.liked_by.all %}fas{% else %}far{% endif %} fa-heart"></i>
+                        {% if user in book.liked_by.all %}Unlike{% else %}Like{% endif %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="{% static 'dynamic/footer.js' %}" defer></script>
 </body>
 </html>

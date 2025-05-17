@@ -1,0 +1,52 @@
+{% load static %}
+<div id="book-{{ book.id }}" class="book-card admin-book-card">
+    <div class="book-header">
+        <div class="favorite-section">
+            <span class="likes-count">
+                <i class="fa-solid fa-heart"></i> {{ book.likes }}
+            </span>
+        </div>
+        <div class="book-status {% if book.available %}available{% else %}borrowed{% endif %}">
+            {{ book.available|yesno:"Available,Borrowed" }}
+        </div>
+    </div>
+
+    <img src="{{ book.cover_image.url }}" alt="{{ book.title }} Cover" />
+    <h3>{{ book.title }}</h3>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.category }}</p>
+
+    <!-- Book Management -->
+    <div class="book-management">
+        {% if book.borrowed_by %}
+            <p class="borrowed-by">Borrowed by: {{ book.borrowed_by.username }}</p>
+            <form method="POST" action="{% url 'return_book' book.id %}" class="return-form">
+                {% csrf_token %}
+                <button type="submit" class="return-btn" data-book-id="{{ book.id }}">Return Book</button>
+            </form>
+        {% else %}
+            <form method="POST" action="{% url 'borrow_book' book.id %}" class="borrow-form">
+                {% csrf_token %}
+                <select name="user_id" required>
+                    <option value="">Select User</option>
+                    {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.username }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="borrow-btn" data-book-id="{{ book.id }}">Assign to User</button>
+            </form>
+        {% endif %}
+    </div>
+
+    <div class="admin-actions">
+        <a href="{% url 'edit_book' book.id %}" class="edit-btn" data-book-id="{{ book.id }}">
+            <i class="fas fa-edit"></i> Edit
+        </a>
+        <form method="POST" action="{% url 'delete_book' book.id %}" class="delete-form">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn" data-book-id="{{ book.id }}">
+                <i class="fas fa-trash"></i> Delete
+            </button>
+        </form>
+    </div>
+</div> 

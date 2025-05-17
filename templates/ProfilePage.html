@@ -1,105 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Profile</title>
-      <link rel="stylesheet" href="Css/profile-page.css" />
-      <link rel="stylesheet" href="Css/Nav.css" />
-      <link rel="stylesheet" href="Css/footer.css">
+{% extends "base.html" %}
+{% load static %}
 
-      <script src="../dynamic/profile.js" defer></script>
-      <script src="../dynamic/footer.js" defer></script>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+<style>
+/* Override any conflicting styles */
+.view-book {
+    color: white !important;
+    text-decoration: none !important;
+}
+.view-book:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+.profile-container {
+    margin: 40px auto !important;
+}
+</style>
+{% endblock %}
 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-   </head>
-   <body>
-      <!-- Navigation Bar part -->
-      <div id="navbar-placeholder"></div>
-
-      <!-- User profile part  -->
-      <div class="profile-container">
-         <div class="profile-section">
+{% block content %}
+<main class="main-container">
+    <div class="profile-container">
+        <div class="profile-section">
             <div class="profile-avatar">
-               <img src="/api/placeholder/80/80" alt="User Avatar" />
+                <i class="fas fa-user-circle fa-5x"></i>
             </div>
 
             <div class="profile-info">
-               <h2>Mohamed Al-Fatihe</h2>
-               <p>mohamed.alfatihe@gmail.com</p>
-               <p>Joined on: 2023-01-23</p>
+                <h2>{{ user.get_full_name }}</h2>
+                <p>{{ user.email }}</p>
+                <p>Joined on: {{ user.date_joined|date:"Y-m-d" }}</p>
+                <a href="{% url 'edit_profile' %}" class="edit-profile-btn">Edit Profile</a>
             </div>
-         </div>
+        </div>
 
-         <!-- Begining of the edited part-->
-         <div class="fav-bor-books">
-            <div class="favorite-books">
-               <h3>Favorite Books</h3>
-               <div class="fav-list">
-               <ul>
-                  <li>
-                     <div class="book-info">
-                        <span class="book-title">The Great Gatsby</span>
-                        <span class="book-author">Author: F. Scott Fitzgerald</span>
-                     </div>
-                  </li>
-
-                  <li>
-                     <div class="book-info">
-                        <span class="book-title">1984</span>
-                        <span class="book-author">Author: George Orwell</span>
-                     </div>   
-                  </li>
-                  <li>
-                     <div class="book-info">
-                        <span class="book-title">To Kill a Mockingbird</span>
-                        <span class="book-author">Author: Harper Lee</span>
-                     </div>
-                  </li>
-               </ul>
-               </div>
+        <div class="books-container">
+            <div class="books-tabs">
+                <button class="tab-button active" data-tab="favorites">
+                    <i class="fas fa-heart"></i> Favorite Books
+                </button>
+                <button class="tab-button" data-tab="borrowed">
+                    <i class="fas fa-book"></i> Borrowed Books
+                </button>
             </div>
-            <div class="recent-borrowed">
-               <h3>Borrowed Books</h3>
-               <div class="borrowed-list">
-                  <ul>
-                     <li>
-                        <div class="borrowed-info">
-                           <span class="borrowed-title">The Great Gatsby</span>
-                           <span class="borrowed-date">Borrowed on: 2023-01-23</span>
-                           <span class="borrowed-return-date">Return Date: 2023-02-23</span>
-                        </div>
-                     </li>
-                     <li>
-                        <div class="borrowed-info">
-                           <span class="borrowed-title">1984</span>
-                           <span class="borrowed-date">Borrowed on: 2023-01-23</span>
-                           <span class="borrowed-return-date">Return Date: 2023-02-23</span>
-                        </div>
-                     </li>
-                     <li>
-                        <div class="borrowed-info">
-                           <span class="borrowed-title">To Kill a Mockingbird</span>
-                           <span class="borrowed-date">Borrowed on: 2023-01-23</span>
-                           <span class="borrowed-return-date">Return Date: 2023-02-23</span>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         <!-- End of the edited part-->
-      </div>
 
-      <!-- Add the Footer Using JavaScript -->
-      <div id="footer-placeholder"></div>
-      
-<script>
-   fetch('Navigationbar.html')
-       .then(response => response.text())
-       .then(data => {
-           document.getElementById('navbar-placeholder').innerHTML = data;
-       });
-</script>
-   </body>
-</html>
+            <div class="books-content">
+                <div class="book-list active" id="favorites-list">
+                    {% if favorite_books %}
+                        {% for book in favorite_books %}
+                        <div class="book-info">
+                            <span class="book-title">{{ book.title }}</span>
+                            <span class="book-author">Author: {{ book.author }}</span>
+                            <a href="{% url 'book_description' book.id %}" class="view-book">View Book</a>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty-message">No favorite books yet</div>
+                    {% endif %}
+                </div>
+
+                <div class="book-list" id="borrowed-list">
+                    {% if borrowed_books %}
+                        {% for book in borrowed_books %}
+                        <div class="book-info">
+                            <span class="book-title">{{ book.title }}</span>
+                            <span class="book-author">Author: {{ book.author }}</span>
+                            <a href="{% url 'book_description' book.id %}" class="view-book">View Book</a>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty-message">No borrowed books</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'JS/profile.js' %}"></script>
+{% endblock %}

@@ -4,52 +4,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Library Admin Dashboard</title>
 
     <link rel="stylesheet" href="{% static 'Css/dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'Css/Nav.css' %}">
     <link rel="stylesheet" href="{% static 'Css/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/admin.css' %}">
     
-    <script src="{% static '../dynamic/footer.js' %}" defer></script>
-    <script src="{% static '../dynamic/displayBookAdmin.js' %}" defer></script>
-    <script src="{% static '../dynamic/dashboard.js' %}" defer></script>
+    <script src="{% static 'dynamic/footer.js' %}" defer></script>
+    <script src="{% static 'dynamic/displayBookAdmin.js' %}" defer></script>
+    <script src="{% static 'dynamic/dashboard.js' %}" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        .book-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+
+        .book-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-card {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="dashboard.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="sign-up.html"><i class="fas fa-sign-in-alt"></i>log out</a></li>
-                <li><a href="ProfilePage.html"><i class="fas fa-user-plus"></i>profile page</a></li>
-                <li><a href="contactUs.html"><i class="fas fa-question-circle"></i>Help Center</a></li>
-                <li><a href="aboutus.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+                <li><a href="{% url 'admin_dashboard' %}"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                <li><a href="{% url 'pages:contact' %}"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="/admin/"><i class="fas fa-cogs"></i> Django Admin</a></li>
             </ul>
             <div class="search-box">
-                <input type="text" placeholder="Search about Book...">
+                <input type="text" id="searchInput" placeholder="Search for books or users...">
                 <button><i class="fas fa-search"></i></button>
             </div>
         </div>
     </nav>
-    <!-- Add Book Button -->
-    <section class="action-section" class="admin-link">
-        <a href="addBook.html" class="addbook">Add New Book</a>
+
+    <!-- Statistics Dashboard -->
+    <div class="stats-container">
+        <div class="stat-card">
+            <i class="fas fa-book"></i>
+            <h3>Total Books</h3>
+            <p>{{ total_books }}</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-book-reader"></i>
+            <h3>Borrowed Books</h3>
+            <p>{{ borrowed_books }}</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-book-open"></i>
+            <h3>Available Books</h3>
+            <p>{{ available_books }}</p>
+        </div>
+        <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <h3>Total Users</h3>
+            <p>{{ total_users }}</p>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <section class="admin-actions">
+        <a href="{% url 'add_book' %}" class="admin-btn add-btn">
+            <i class="fas fa-plus"></i> Add New Book
+        </a>
+        <a href="/admin/auth/user/" class="admin-btn users-btn">
+            <i class="fas fa-users-cog"></i> Manage Users
+        </a>
     </section>
 
     <!-- Main Content -->
     <div class="main-content">
         <!-- Book Listing Section -->
         <section class="book-section">
-            <h2>Available Books</h2>
+            <h2>Library Books Management</h2>
             <div class="book-grid">
+                {% for book in books %}
+                <div class="book-card admin-book-card">
+                    <div class="book-header">
+                        <div class="favorite-section">
+                            <span class="likes-count">
+                                <i class="fa-solid fa-heart"></i> {{ book.likes }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'book_description' book.id %}" class="book-link">
+                        <img src="{{ book.cover_image.url }}" alt="{{ book.title }} Cover" />
+                        <h3>{{ book.title }}</h3>
+                        <p>Author: {{ book.author }}</p>
+                        <p>Genre: {{ book.category }}</p>
+                    </a>
+
+                    <div class="admin-actions">
+                        <a href="{% url 'edit_book' book.id %}" class="edit-btn">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                        <form method="POST" action="{% url 'delete_book' book.id %}" class="delete-form" onsubmit="return confirm('Are you sure you want to delete this book?');">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-btn">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </section>
     </div>
-    <!-- Add the Footer Using JavaScript -->
-    <div id="footer-placeholder"></div>
-</body>
 
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchText = e.target.value.toLowerCase();
+            const bookCards = document.querySelectorAll('.book-card');
+            
+            bookCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const author = card.querySelector('p').textContent.toLowerCase();
+                const borrowedBy = card.querySelector('.borrowed-by')?.textContent.toLowerCase() || '';
+                
+                if (title.includes(searchText) || author.includes(searchText) || borrowedBy.includes(searchText)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
 </html>

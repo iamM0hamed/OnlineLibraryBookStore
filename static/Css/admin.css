@@ -1,0 +1,243 @@
+/* Statistics Dashboard */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    color: #444;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.stat-card p {
+    color: #007bff;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Admin Actions */
+.admin-actions {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.add-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+.users-btn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.users-btn:hover {
+    background-color: #138496;
+}
+
+/* Book Cards Admin Style */
+.admin-book-card {
+    position: relative;
+    padding-top: 40px;
+}
+
+.book-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.book-status.available {
+    background-color: #28a745;
+    color: white;
+}
+
+.book-status.borrowed {
+    background-color: #dc3545;
+    color: white;
+}
+
+.book-management {
+    margin: 15px 0;
+}
+
+.borrowed-by {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.borrow-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.borrow-form select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.return-btn {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.return-btn:hover {
+    background-color: #138496;
+}
+
+/* Messages */
+.messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 15px 25px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: white;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-error {
+    background-color: #dc3545;
+}
+
+.alert-info {
+    background-color: #17a2b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-actions {
+        flex-direction: column;
+    }
+
+    .admin-book-card {
+        padding-top: 60px;
+    }
+
+    .book-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+} 

@@ -16,15 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from users.views import index
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.decorators import login_required
+from users.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('users.urls')),
+    path('', include('users.urls')),  # Changed from auth/ to '' to make authentication URLs cleaner
     path('books/', include('books.urls')),
-    path('', index, name='index')
+    path('', include('pages.urls')),  # Added pages URLs
 ]
 
 if settings.DEBUG:
