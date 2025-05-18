@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>borrow</title>
-    <link rel="stylesheet" href="{% static './Css/footer.css' %}">
-    <link rel="stylesheet" href="{% static './Css/borrow.css' %}">
-    <link rel="stylesheet" href="{% static './Css/Nav.css' %}">
+   {% load static %}
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>borrow</title>
+      <link rel="stylesheet" href="{% static './Css/footer.css' %}" />
+      <link rel="stylesheet" href="{% static './Css/borrow.css' %}" />
+      <link rel="stylesheet" href="{% static './Css/Nav.css' %}" />
 
-    <script src="{% static '../dynamic/footer.js' %}" defer></script>
-    <script src="{% static '../dynamic/nav.js' %}" defer></script>
+      <script src="{% static '../dynamic/footer.js' %}" defer></script>
+      <script src="{% static '../dynamic/nav.js' %}" defer></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+   </head>
 
-<body>
-    <!-- Navigation Bar part -->
-    <div id="navbar-placeholder"></div>
+   <body>
+      <div id="navbar-placeholder"></div>
 
-    <main class="content">
-        <!-- Borrow Form -->
-        <section id="borrow-book">
+      <main class="content">
+         <section id="borrow-book">
             <div class="borrow-container">
-                <h2>Borrow Book</h2>
-                <div class="borrow-form">
-                    <form>
-                        <label for="borrow-date">Borrow Date:</label>
-                        <input type="date" id="borrow-date" name="borrow-date" required>
+               <h2>Borrow Book</h2>
+               <div class="borrow-form">
+                  <form>
+                     <label for="borrow-date">Borrow Date:</label>
+                     <input type="date" id="borrow-date" name="borrow-date" required />
 
-                        <label for="return-date">Return Date:</label>
-                        <input type="date" id="return-date" name="return-date" required>
+                     <label for="return-date">Return Date:</label>
+                     <input type="date" id="return-date" name="return-date" required />
 
-                        <button class="buttonlink" type="submit">Borrow Book</button>
-                    </form>
-                </div>
+                     <button class="buttonlink" type="submit">Borrow Book</button>
+                  </form>
+               </div>
             </div>
-        </section>
-    </main>
-    <!-- Add the Footer Using JavaScript -->
-    <div id="footer-placeholder"></div>
-</body>
-
+         </section>
+      </main>
+          <div id="footer-placeholder"></div>
+   </body>
 </html>

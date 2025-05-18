@@ -23,9 +23,9 @@ from users.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('users.urls')),  # Changed from auth/ to '' to make authentication URLs cleaner
+    path('', include('users.urls')),  
     path('books/', include('books.urls')),
-    path('', include('pages.urls')),  # Added pages URLs
+    path('', include('pages.urls')),  
 ]
 
 if settings.DEBUG:

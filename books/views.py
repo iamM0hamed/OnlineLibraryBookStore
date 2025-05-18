@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from .models import Book
-from .forms import BookForm  # تأكد إنك عملت BookForm
+from .forms import BookForm 
 
 def is_admin(user):
     return user.is_staff

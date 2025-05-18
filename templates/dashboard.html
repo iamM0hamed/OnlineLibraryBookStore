@@ -9,7 +9,6 @@
       <link rel="stylesheet" href="{% static 'Css/dashboard.css' %}" />
       <link rel="stylesheet" href="{% static 'Css/footer.css' %}" />
 
-      <script src="{% static 'dynamic/footer.js' %}" defer></script>
       <script src="{% static 'dynamic/displayBook.js' %}" defer></script>
       <script src="{% static 'dynamic/dashboard.js' %}" defer></script>
 
@@ -18,17 +17,27 @@
    <body>
       <nav class="navbar">
          <div class="nav-container">
-             <ul class="nav-links">
-                 <li><a href="{% url 'dashboard' %}"><i class="fas fa-home"></i> Home</a></li>
-                 <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
-                 <li><a href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a></li>
-                 <li><a href="{% url 'pages:contact' %}"><i class="fas fa-question-circle"></i> Help</a></li>
-                 <li><a href="{% url 'pages:about' %}"><i class="fas fa-info-circle"></i> About</a></li>
-             </ul>
-             <div class="search-box">
-                 <input type="text" placeholder="Search for a book...">
-                 <button><i class="fas fa-search"></i></button>
-             </div>
+            <ul class="nav-links">
+               <li>
+                  <a href="{% url 'dashboard' %}"><i class="fas fa-home"></i> Home</a>
+               </li>
+               <li>
+                  <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log out</a>
+               </li>
+               <li>
+                  <a href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a>
+               </li>
+               <li>
+                  <a href="{% url 'pages:contact' %}"><i class="fas fa-question-circle"></i> Help</a>
+               </li>
+               <li>
+                  <a href="{% url 'pages:about' %}"><i class="fas fa-info-circle"></i> About</a>
+               </li>
+            </ul>
+            <div class="search-box">
+               <input type="text" placeholder="Search for a book..." />
+               <button><i class="fas fa-search"></i></button>
+            </div>
          </div>
       </nav>
 
@@ -36,32 +45,33 @@
          <section class="book-section">
             <h2>Available Books</h2>
             <div class="book-grid">
-                {% for book in books %}
-                <a href="{% url 'book_description' book.id %}" class="book-card-link">
-    <div class="book-card">
-        <img src="{{ book.cover_image.url }}" alt="{{ book.title }} Cover" />
-        <h3>{{ book.title }}</h3>
-        <p>Author: {{ book.author }}</p>
-        <p>Genre: {{ book.category }}</p>
+               {% for book in books %}
+               <a href="{% url 'book_description' book.id %}" class="book-card-link">
+                  <div class="book-card">
+                     <img src="{{ book.cover_image.url }}" alt="{{ book.title }} Cover" />
+                     <h3>{{ book.title }}</h3>
+                     <p>Author: {{ book.author }}</p>
+                     <p>Genre: {{ book.category }}</p>
 
-        <div class="favorite-section">
-            <form method="POST" action="{% url 'like_book' book.id %}">
-                {% csrf_token %}
-                <button type="submit" class="favorite-btn">
-                    <i class="fa-solid fa-heart"></i>
-                </button>
-            </form>
-            <div class="favorite-counter">
-                <span class="favorite-number">{{ book.likes }}</span>
-            </div>
-        </div>
-    </div>
-</a>
-                {% endfor %}
+                     <div class="favorite-section">
+                        <form method="POST" action="{% url 'like_book' book.id %}">
+                           {% csrf_token %}
+                           <button type="submit" class="favorite-btn">
+                              <i class="fa-solid fa-heart"></i>
+                           </button>
+                        </form>
+                        <div class="favorite-counter">
+                           <span class="favorite-number">{{ book.likes }}</span>
+                        </div>
+                     </div>
+                  </div>
+               </a>
+               {% endfor %}
             </div>
          </section>
       </div>
 
-      <div id="footer-placeholder"></div>
+      {%include 'footer.html'%}
+      <script src="{% static 'JS/footer.js' %}" defer></script>
    </body>
 </html>
