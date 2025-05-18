@@ -3,10 +3,13 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
     
-    <!-- Updated CSS Link -->
+    <!-- Base CSS first for consistent layout -->
+    <link rel="stylesheet" href="{% static 'Css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Nav.css' %}">
     <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
     <style>
         .error-message {
@@ -98,9 +101,8 @@
     </style>
 </head>
 <body>
-  <div id="navbar-placeholder">
-    {% include 'Navigationbar.html' %}
-  </div>
+  <!-- Navigation -->
+  {% include 'Navigationbar.html' %}
 
   <div class="video-background">
     <video autoplay muted loop playsinline id="bg-video">
@@ -110,68 +112,72 @@
     <div class="video-overlay"></div>
   </div>
   
-  <div class="form-container">
-    {% if messages %}
-        <div class="messages-container">
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
+  <main>
+    <div class="page-container">
+      <div class="form-container">
+        {% if messages %}
+            <div class="messages-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
 
-    <form class="flex-form" method="POST" action="{% url 'signup' %}" id="signupForm">
-      {% csrf_token %}
-      <h1>Welcome to Our Library <br> Let's Create an account</h1>
-      
-      <!-- Display Django error message -->
-      {% if error %}
-      <div class="error-message">
-        <i class="fas fa-exclamation-circle"></i>
-        <span>{{ error }}</span>
+        <form class="flex-form" method="POST" action="{% url 'signup' %}" id="signupForm">
+          {% csrf_token %}
+          <h1>Welcome to Our Library <br> Let's Create an account</h1>
+          
+          <!-- Display Django error message -->
+          {% if error %}
+          <div class="error-message">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>{{ error }}</span>
+          </div>
+          {% endif %}
+
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" id="Fname" name="Fname" required placeholder="First name" 
+                     value="{{ form_data.first_name|default:'' }}">
+            </div>
+
+            <div class="input-group">
+              <input type="text" id="Lname" name="Lname" required placeholder="Last name"
+                     value="{{ form_data.last_name|default:'' }}">
+            </div>
+
+            <div class="input-group full-width">
+              <input type="email" id="email" name="email" required placeholder="E-mail"
+                     value="{{ form_data.email|default:'' }}">
+            </div>
+
+            <div class="input-group">
+              <input type="password" id="password" name="password" required placeholder="Password">
+            </div>
+
+            <div class="input-group">
+              <input type="password" id="pass" name="pass" required placeholder="Confirm Password">
+            </div>
+
+            <div class="input-group">
+              <input type="checkbox" id="admin-checkbox" name="admin-checkbox" {% if form_data.is_admin %}checked{% endif %}> 
+              <label for="admin-checkbox">Admin Account</label>
+            </div>
+            
+            <div class="input-group" id="secret-key-group" style="display: none;">
+              <input type="password" id="secret-key" name="secret-key" placeholder="Enter Secret Key">
+            </div>
+          </div>
+
+          <div class="submit-group">
+            <button type="submit" class="buttonlink">Submit</button>
+          </div>
+        </form>
       </div>
-      {% endif %}
-
-      <div class="form-group">
-        <div class="input-group">
-          <input type="text" id="Fname" name="Fname" required placeholder="First name" 
-                 value="{{ form_data.first_name|default:'' }}">
-        </div>
-
-        <div class="input-group">
-          <input type="text" id="Lname" name="Lname" required placeholder="Last name"
-                 value="{{ form_data.last_name|default:'' }}">
-        </div>
-
-        <div class="input-group full-width">
-          <input type="email" id="email" name="email" required placeholder="E-mail"
-                 value="{{ form_data.email|default:'' }}">
-        </div>
-
-        <div class="input-group">
-          <input type="password" id="password" name="password" required placeholder="Password">
-        </div>
-
-        <div class="input-group">
-          <input type="password" id="pass" name="pass" required placeholder="Confirm Password">
-        </div>
-
-        <div class="input-group">
-          <input type="checkbox" id="admin-checkbox" name="admin-checkbox" {% if form_data.is_admin %}checked{% endif %}> 
-          <label for="admin-checkbox">Admin Account</label>
-        </div>
-        
-        <div class="input-group" id="secret-key-group" style="display: {% if form_data.is_admin %}block{% else %}none{% endif %};">
-          <input type="password" id="secret-key" name="secret-key" placeholder="Enter Secret Key">
-        </div>
-      </div>
-
-      <div class="submit-group">
-        <button type="submit" class="buttonlink">Submit</button>
-      </div>
-    </form>
-  </div>
+    </div>
+  </main>
 
   <!-- Debug console -->
   <script>
@@ -186,6 +192,10 @@
       const secretKeyGroup = document.getElementById('secret-key-group');
       
       if (adminCheckbox && secretKeyGroup) {
+        // Set initial visibility based on checkbox state
+        secretKeyGroup.style.display = adminCheckbox.checked ? 'block' : 'none';
+        
+        // Add change event listener
         adminCheckbox.addEventListener('change', function() {
           secretKeyGroup.style.display = this.checked ? 'block' : 'none';
         });

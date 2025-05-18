@@ -1,13 +1,4 @@
-
-
-
-/*  Styling for Profile Page down below */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
+/*  Profile Page specific styles */
 
 .container {
     max-width: 600px;

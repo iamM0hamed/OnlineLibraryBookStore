@@ -3,14 +3,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign-in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library</title>
     <script src="https://kit.fontawesome.com/2ef47f0c89.js" crossorigin="anonymous"></script>
+    
+    <!-- Base CSS first for consistent layout -->
+    <link rel="stylesheet" href="{% static 'Css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/Nav.css' %}">
     <link rel="stylesheet" href="{% static 'Css/Sign_style.css' %}">
 </head>
 <body>
-    <div id="navbar-placeholder">
-        {% include 'Navigationbar.html' %}
-    </div>
+    <!-- Navigation -->
+    {% include 'Navigationbar.html' %}
 
     <div class="video-background">
         <video autoplay muted loop playsinline id="bg-video">
@@ -20,16 +24,20 @@
         <div class="video-overlay"></div>
     </div>
   
-    <div class="form-container">
-        <form class="flex-form" method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            <h1>Welcome to Our Library</h1>
+    <main>
+        <div class="page-container">
+            <div class="form-container">
+                <form class="flex-form" method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <h1>Welcome to Our Library</h1>
 
-            <div class="button-container">
-                <a href="{% url 'signup' %}" class="newbutton"><i class="fas fa-user-plus"></i> Sign Up</a>
-                <a href="{% url 'login' %}" class="newbutton"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                    <div class="button-container">
+                        <a href="{% url 'signup' %}" class="newbutton"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        <a href="{% url 'login' %}" class="newbutton"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
+        </div>
+    </main>
 </body>
 </html>

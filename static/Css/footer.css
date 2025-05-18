@@ -1,24 +1,22 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing : border-box;
+/* Footer specific styles only */
+@keyframes fade-up {
+   from {
+      opacity: 0;
+      transform: translateY(50px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
 }
 
-html {
-    height: 100%;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative; 
-    background-color: #FAF3E0; 
-}
-
-/* Main content should grow to push footer down */
-body > p {
-    flex: 1;
+@keyframes shine {
+   from {
+      left: -75%;
+   }
+   to {
+      left: 125%;
+   }
 }
 
 .footer {
@@ -32,10 +30,9 @@ body > p {
     position: relative;
     overflow: hidden;
     animation: fade-up 1s ease-out forwards;
-    margin: auto;
 }
  
- .footer::before {
+.footer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -46,90 +43,88 @@ body > p {
     transform: skewX(-25deg);
     animation: shine 3s ease-out forwards;
     z-index: 1;
- }
+}
  
- .footer-container {
+.footer-container {
     padding: 0;
     width: 100%;
     box-sizing: border-box;
- }
+}
  
- .footer-icon {
+.footer-icon {
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
- }
+}
  
- .footer-icon a {
+.footer-icon a {
     text-decoration: none;
     padding: 3px;
     background-color: #fff;
     margin: 3px;
     border-radius: 50%;
- }
+}
  
- .footer-icon a i {
+.footer-icon a i {
     font-size: 1.5em;
     color: black;
     opacity: 0.9;
- }
+}
  
- .footer-icon a:hover {
+.footer-icon a:hover {
     background-color: #111;
     transition: 0.5s;
- }
+}
  
- .footer-icon a:hover i {
+.footer-icon a:hover i {
     color: white;
     transition: 0.5s;
- }
+}
  
- .footer-nav {
+.footer-nav {
     margin: 3px 0;
- }
+}
  
- .footer-nav ul {
+.footer-nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
     padding: 0;
     margin: 0;
- }
+}
  
- .footer-nav ul li a {
+.footer-nav ul li a {
     color: white;
     margin: 5px;
     text-decoration: none;
     font-size: 0.9em;
     opacity: 0.7;
     transition: 0.5s;
- }
+}
  
- .footer-nav ul li a:hover {
+.footer-nav ul li a:hover {
     opacity: 1;
- }
+}
  
- #footer-bottom {
+#footer-bottom {
     background-color: #74641d;
     padding: 5px;
     text-align: center;
- }
+}
  
- #footer-bottom p {
+#footer-bottom p {
     color: white;
     margin: 0;
     font-size: 0.8em;
- }
+}
  
- .designer {
+.designer {
     opacity: 0.7;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 400;
     margin: 0px 5px;
- }
- 
-
+}
  
 .modal {
    display: none;
@@ -141,7 +136,6 @@ body > p {
    background-color: rgba(0, 0, 0, 0.5);
    z-index: 100;
    overflow: auto;
-
 }
 
 .modal-content {
@@ -158,7 +152,6 @@ body > p {
    display: flex;
    flex-direction: column;
    align-items: center;
-
 }
 
 .modal-content h1 {
@@ -188,17 +181,6 @@ body > p {
 
 body.modal-open {
    overflow: hidden;
-}
-
-@keyframes fade-up {
-   from {
-      opacity: 0;
-      transform: translateY(50px);
-   }
-   to {
-      opacity: 1;
-      transform: translateY(0);
-   }
 }
 
 @keyframes fadeIn {

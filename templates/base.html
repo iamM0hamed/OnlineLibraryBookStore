@@ -9,7 +9,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <!-- Base CSS -->
+    <!-- Base CSS - Load first to establish global styles -->
+    <link rel="stylesheet" href="{% static 'Css/base.css' %}">
     <link rel="stylesheet" href="{% static 'Css/Nav.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
@@ -82,7 +83,9 @@
             </div>
         {% endif %}
 
-        {% block content %}{% endblock %}
+        <div class="page-container">
+            {% block content %}{% endblock %}
+        </div>
     </main>
 
     <!-- Footer -->
