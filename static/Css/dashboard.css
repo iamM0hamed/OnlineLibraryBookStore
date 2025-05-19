@@ -104,24 +104,6 @@ input[type="checkbox"] {
    display: none;
 }
 
-.favorite-btn {
-   color: gray;
-   width: 30px;
-   height: 30px;
-   border-radius: 50%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   position: absolute;
-   top: 10px;
-   right: 10px;
-   z-index: 1000;
-   background-color: white;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-   cursor: pointer;
-   transition: transform 0.2s, color 0.2s;
-}
-
 .favorite-btn:hover {
    transform: scale(1.1);
 }
@@ -140,17 +122,13 @@ input[type="checkbox"]:checked + .favorite-btn i {
 }
 
 @keyframes heartbeat {
-   0%, 100% { transform: scale(1); }
-   50% { transform: scale(1.2); }
-}
-
-
-
-.favorite-counter {
-   position: absolute;
-   top: 40px;
-   right: 21px;
-   z-index: 1000;
+   0%,
+   100% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.2);
+   }
 }
 
 .favorite-number {
