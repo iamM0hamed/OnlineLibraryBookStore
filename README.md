@@ -1,9 +1,4 @@
 # Online Library
-Web Technology Project
-
-<p>This project is about online bookstore.</p>
-<p><del>It may be bad but not the worst</del></p>
-
-<p>It's constantly improving and aims to be one of the best! </p>
-
-2025/04/16 : Almost finish all files and going on the JS isA
+##A Web Technology Project
+Front-end : using HTML5 , CSS3 , JavaScript 
+Back-end  : Python , Django framework 
